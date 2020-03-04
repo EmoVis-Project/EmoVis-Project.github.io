@@ -218,7 +218,9 @@
 					<td name="s231"  class="active-cell s231">0</td>
 					<td name="s232"  class="active-cell s232">1</td>
 					<td name="s233"  class="active-cell s233">4</td>
-					<td name="s234"  class="active-cell s234">7</td>
+					<td name="s234"  class="active-cell s234">7
+						<img src="src/star.png"  height="10" width="10"/>
+					</td>
 					<td name="s235"  class="active-cell s235">2</td>
 					<td name="s236"  class="active-cell s236">1</td>
 					<td name="s237"  class="active-cell s237">1</td>
@@ -324,8 +326,12 @@
 					<td name="s430"  class="active-cell s430">2</td>
 					<td name="s431"  class="active-cell s431">2</td>
 					<td name="s432"  class="active-cell s432">0</td>
-					<td name="s433"  class="active-cell s433">11</td>
-					<td name="s434"  class="active-cell s434">15</td>
+					<td name="s433"  class="active-cell s433">11
+						<img src="src/star.png"  height="10" width="10"/>
+					</td>
+					<td name="s434"  class="active-cell s434">15
+						<img src="src/star.png"  height="10" width="10"/>
+					</td>
 					<td name="s435"  class="active-cell s435">4</td>
 					<td name="s436"  class="active-cell s436">1</td>
 					<td name="s437"  class="active-cell s437">0</td>
@@ -383,15 +389,10 @@
 			</div>
 			<div class="col-md-12" id="dimensions">
 				<h3>Design Skill:</h3>
-				<!-- <table class="table table-condensed table-bordered" id="design-dim">
-					<tbdy>
-						<tr>
-							<th></th>
-							<td id="d1"></td>
-						</tr>	
-					</tbody>
-				</table> -->
-				<p id="d1"></p>
+				<h4>VISUAL DESIGN</h4>
+				<p id="d1" style="color:#3f5ea2"></p>
+				<h4>NARRATIVE</h4>
+				<p id="d2" style="color:#d26d28"></p>
 			</div>
 		</div>
 
@@ -510,7 +511,8 @@ imgLoad(gif, function() {
        			 break;
    				  default:
       			  return null;
-                }
+				}
+				
 				//动态创建查询列表
 				table.length = 0; //refresh
 				for(var i=0;i<cues.length;i++){
@@ -519,6 +521,7 @@ imgLoad(gif, function() {
 					table.push(cues[i]);
 				}
 				}
+				
                 idp = 0;
 				idl = table.length;  //length 查询到的所有图片的length
 				if(idl!=0){
@@ -538,7 +541,7 @@ imgLoad(gif, function() {
 				gif = d3.select("#gif"),
 				topic = d3.select("#topic"),
 				dim1 = d3.select("#d1"),
-				// dim2 = d3.select("#d2"),
+				dim2 = d3.select("#d2"),
 				// dim3 = d3.select("#d3"),
 				// dim4 = d3.select("#d4"),
 				// dim5 = d3.select("#d5"),
@@ -547,23 +550,38 @@ imgLoad(gif, function() {
 			title.html(data.title+" in "+ emotion+" "+(idp+1)+"/"+idl);
 			gif.attr("src",data.link )
 				.attr("loop","infinite");
-			source.html("<a href='" + data.link + "'>" + data.link + "</a>");
+			var src = data.link; //识别本地图片和网络图片
+				if(data.link.indexOf("src/")!=-1){src ="https://infographics-test.s3-us-west-1.amazonaws.com/"+data.link.slice(4) }
+			source.html("<a href='" + src + "'>" + src + "</a>");
 			topic.html(data.topic);
 			description.html(data.des);
 
-			var skillList = [];
+			var skillList1 = [];
+			var skillList2 = [];
 	// document.getElementById("gif").src = data.link;
 			for(var m = 1;m<38;m++){
 				var skillNum = "si"+m;
 				if(m<10){skillNum = "si"+"0"+m;}
 				if(data[skillNum]==1){
-					skillList.push("<br>●  "+document.getElementById(skillNum).innerHTML)
+					if(0<m<26){
+						if(skillList1==""){skillList1.push("●  "+document.getElementById(skillNum).innerHTML)}
+						else{skillList1.push("<br>●  "+document.getElementById(skillNum).innerHTML)}
+						
+						}
+					if(m>=26){
+						if(skillList2==""){skillList2.push("●  "+document.getElementById(skillNum).innerHTML)}
+						else{skillList2.push("<br>●  "+document.getElementById(skillNum).innerHTML)}
+
+					}
 				}
 			}//为每张图片定制显示的skill
 
 
-			dim1.html(skillList);
-			// dim2.html(data.d2);
+			if(skillList2=="")
+			{skillList2.push("None");}
+
+			dim1.html(skillList1);
+			dim2.html(skillList2);
 			// dim3.html(data.d3);
 			// dim4.html(data.d4);
 			// dim5.html(data.d5);
