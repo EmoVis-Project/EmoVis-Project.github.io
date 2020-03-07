@@ -197,15 +197,17 @@ small span.glyphicon:hover{
 }
 
 #design-space tbody tr td.highlighted{
-	border-right: 3px solid #EA5A40 !important;
-	border-left: 3px solid #EA5A40 !important;
+	/* border-right: 3px solid #DE8243 !important;
+	border-left: 3px solid #DE8243 !important; */
+	border:  3px solid #DE8243 !important;
 	cursor: pointer;
 }
 
 #design-space tbody tr td.rotate.highlighted{
-	border-right: 3px solid #EA5A40 !important;
-	border-left: 3px solid #EA5A40 !important;
-	border-top: 3px solid #EA5A40 !important;
+	/* border-right: 3px solid #DE8243 !important;
+	border-left: 3px solid #DE8243 !important;
+	border-top: 3px solid #DE8243 !important; */
+	border: 3px solid #DE8243 !important;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
