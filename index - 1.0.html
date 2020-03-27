@@ -6,7 +6,6 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>EI Design Space</title>
 	
-	
 	<script type="text/javascript" src="libs/d3.v4.min.js"></script>
 	<script type="text/javascript" src="libs/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="data/content.js"></script>
@@ -20,13 +19,11 @@
 
 
 <body>
-	<script type="text/javascript" src="libs3/echarts.all.js"></script>
 
 
 
 	<!-- table  -->
-	<!-- <div class="container-fluid text-center" id="major"> -->
-		
+	<div class="container-fluid text-center" id="major">
 		
 	<!-- <a class="DownButtonNormal" 
 	name="DownLoadHistEvent" 
@@ -35,16 +32,8 @@
 	<img src="src/download.png" height="20px" width="20px"/>
 	Data
 	</a> -->
-	<div id="maskColor" style="background: linear-gradient(to right, #007FE4 0%,#00C1FF 100%);">
-	    <img src="src/smile.png" width="30px" style="margin-top: 20px;margin-left: 20px;position:absolute"/>  
-		<h1 class="major" >What Triggers Emotional Responses in an Infographic?</h1>
-		<button class = "tab_button_d" onclick="setTab('one',1,2)" id="one1">design space</button>
-		<button class = "tab_button_s" onclick="setTab('one',2,2)" id="one2">data set</button>
-		<button class = "button_c" onclick="changeColor()" ><img src="src/color.png" width="25px" style="margin-right: 5px;"></button>
-	
-		
+		<h1 class="major" title="信息图的情感设计空间" deta-title>What Triggers Emotional Responses in an Infographic?</h1>
 	</div>
-
 
 	<!-- <div style="width: 500px;text-align: center;"> 
 		<p>
@@ -61,30 +50,20 @@
 	
 
 
-
-
-
-
-
-
-	<div style="display: none;" id="con_one_2"  > 
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
+	<div style="width: 500px;
+	margin-left: 110px;
+    font-size: 20px;"> 
+		<p class= "sub">
+			● Interactive Design Space
+		</p>
 	</div>
 
 
-
-
-	<div id="con_one_1" style="display: block;" >
-		<p class= "sub"> Interactive Design Space</p>
-	  
+	
 	<div class="container-fluid" id="ds-container">
+
 		<div class="col-md-10 col-md-offset-1">
-		<table class="table table-condensed table-bordered" id="design-space" style="table-layout:automatic;border-radius: 5px;">
+		<table class="table table-condensed table-bordered" id="design-space" style="table-layout:automatic;">
 			<tbody>
 
 				<!-- <tr>
@@ -95,21 +74,21 @@
                 
 				<tr>
                     <td colspan="2" class="no-border"><b></b></td>
-                    <td colspan="27" class="heavy-bottom black"title="视觉设计" deta-title><b style="color:white">VISUAL DESIGN</b></td>
-                    <td colspan="11" class="heavy-bottom black" title="故事叙述" deta-title><b style="color:white">NARRATIVE</b></td>
+                    <td colspan="27" class="heavy-bottom"title="视觉设计" deta-title><b>VISUAL DESIGN</b></td>
+                    <td colspan="11" class="heavy-bottom" title="故事叙述" deta-title><b>NARRATIVE</b></td>
                 </tr>
                 
                 <tr>
                     <td colspan="2" class="no-border"><b></b></td>
-                    <td colspan="6" class="heavy-bottom-2 dimblue" title="数据" deta-title><b style="color:white;font-size: 9px;">VISUAL REPRESENTATION</b></td>
-                    <td colspan="7" class="heavy-bottom-2 dimblue" title="装饰" deta-title><b style="color:white;font-size: 10px;">ORNAMENTATION</b></td>
-                    <td colspan="6" class="heavy-bottom-2 dimblue" title="配色" deta-title><b style="color:white;font-size: 10px;">COLOR</b></td>
-					<td colspan="8" class="heavy-bottom-2 dimblue" title="布局" deta-title><b style="color:white;font-size: 10px;">ARRANGEMENT</b></td>
-					<td colspan="4" class="heavy-bottom-2 dimblue" title="措辞" deta-title><b style="color:white;font-size: 10px;">PHRASING</b></td>
-                    <td colspan="7" class="heavy-bottom-2 dimblue" title="讲述" deta-title><b style="color:white;font-size: 10px;">TELLING</b></td>
+                    <td colspan="6" class="heavy-bottom dimblue" title="数据" deta-title><b style="color:white">VISUAL REPRESENTATION</b></td>
+                    <td colspan="7" class="heavy-bottom dimblue" title="装饰" deta-title><b style="color:white">ORNAMENTATION</b></td>
+                    <td colspan="6" class="heavy-bottom dimblue " title="配色" deta-title><b style="color:white">COLOR</b></td>
+					<td colspan="8" class="heavy-bottom dimblue " title="布局" deta-title><b style="color:white">ARRANGEMENT</b></td>
+					<td colspan="4" class="heavy-bottom dimred " title="措辞" deta-title><b style="color:white">PHRASING</b></td>
+                    <td colspan="7" class="heavy-bottom dimred" title="讲述" deta-title><b style="color:white">TELLING</b></td>
 				</tr>
 
-				<!-- <tr>
+				<tr>
                     <td colspan="2" class="no-border"><b></b></td>
                     <td colspan="4" class="heavy-bottom" title="Presentation of Information(呈现方式)" deta-title><b>Method</b></td>
 					<td colspan="2" class="heavy-bottom" title="Technique of data Rendering(数据渲染)" deta-title><b>Rendering</b></td>
@@ -122,13 +101,13 @@
 					<td colspan="4" class="heavy-bottom" title="Using rhetoric(使用修辞)" deta-title><b>Figurative Language</b></td>
 					<td colspan="4" class="heavy-bottom" title="Dialogue with readers(与读者对话)" deta-title><b>Dialogue</b></td>
 					<td colspan="3" class="heavy-bottom" title="Design plot(设计情节)" deta-title><b>Plot</b></td>
-				</tr> -->
+				</tr>
 
 
 
 				<tr style="height: 200px;">
-						<td name="si1" class="heavy-left" ><div style="margin-top: 100px;text-align: center;font-weight:900;"><span><small>Emotions</small></span></div></td>
-						<td name="si2" class="heavy-left" ><div style="margin-top: 100px;text-align: center;font-weight:900;"><span><small>Number<br>of <br>Examples</small></span></div></td>
+						<td name="si1" class="heavy" ><div style="margin-top: 100px;text-align: center;font-weight:900;"><span><small>Emotions</small></span></div></td>
+						<td name="si2" class="heavy" ><div style="margin-top: 100px;text-align: center;font-weight:900;"><span><small>Number<br>of <br>Examples</small></span></div></td>
 
 						<td name="si01" class=" si01 rotate" title="display information with text directly(直接用文本、数字表达信息)" deta-title><div><span><small id="si01">typography and text</small></span></div></td>
 						<td name="si02" class=" si02 rotate" title="display information symbolically using geometric shapes like bar, line, slice, etc.(使用几何图形组成的统计图表达信息，如柱状图、折线图等)" deta-title ><div><span><small id="si02">statistical chart</small></span></div></td>
@@ -175,8 +154,8 @@
 						
 						
 	            <tr>
-					<td class="heavy-left"><b>happy<br>excited<br>content<br>hopeful</b></td>
-					<td class="heavy-left"><b name="s1Sum">35</b></td>
+					<td class="heavy"><b>happy<br>excited<br>content<br>hopeful</b></td>
+					<td class="heavy"><b name="s1Sum">35</b></td>
 					<td name="s101"  class="active-cell s101"	>	10	</td>
 <td name="s102"  class="active-cell s102"	>	28	</td>
 <td name="s103"  class="active-cell s103"	>	7	</td>
@@ -222,8 +201,8 @@
 
 
 	            <tr>
-					<td class="heavy-left"><b>suprised</b></td>
-					<td class="heavy-left"><b name="s2Sum">75</b></td>
+					<td class="heavy"><b>suprised</b></td>
+					<td class="heavy"><b name="s2Sum">75</b></td>
 					<td name="s201"  class="active-cell s201"	>	23	</td>
 					<td name="s202"  class="active-cell s202"	>	60	</td>
 					<td name="s203"  class="active-cell s203"	>	27	</td>
@@ -268,8 +247,8 @@
 
 
 				<tr>
-					<td class="heavy-left"><b>awestruck</b></td>
-					<td  class="heavy-left"><b name="s3Sum">7</b></td>
+					<td class="heavy"><b>awestruck</b></td>
+					<td  class="heavy"><b name="s3Sum">7</b></td>
 					<td name="s301"  class="active-cell s301"	>	0	</td>
 					<td name="s302"  class="active-cell s302"	>	3	</td>
 					<td name="s303"  class="active-cell s303"	>	2	</td>
@@ -314,8 +293,8 @@
 				</tr>
 
 				<tr>
-					<td class="heavy-left"><b>sad<br>concerned<br>shocked</b></td>
-					<td  class="heavy-left"><b name="s4Sum">123</b></td>
+					<td class="heavy"><b>sad<br>concerned<br>shocked</b></td>
+					<td  class="heavy"><b name="s4Sum">123</b></td>
 					<td name="s401"  class="active-cell s401"	>	41	</td>
 					<td name="s402"  class="active-cell s402"	>	109	</td>
 					<td name="s403"  class="active-cell s403"	>	57	</td>
@@ -366,132 +345,63 @@
 
 </div>
 
-</div>
-
-
-
-
-
-
-
-
-
 
 	
 
 	<!-- detail infoG -->
 
-	<div class="container-fluid" id="cue-overlay-container"> 
+	<div class="container-fluid" id="cue-overlay-container">
 		
-			<button class='glyphicon-close'>
-				<!-- <img src="src/close.png"  height="10" width="10" style="margin-right: 5px;"/> -->
-			</button>
 
-		
-	<div class="container-img"> 
-	<div class="imgShow"><a href="images/temp_img02.jpg"><img src="images/temp_img02.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img03.jpg"><img src="images/temp_img03.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img04.jpg"><img src="images/temp_img04.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img05.jpg"><img src="images/temp_img05.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img06.jpg"><img src="images/temp_img06.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img07.jpg"><img src="images/temp_img07.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img08.jpg"><img src="images/temp_img08.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img09.jpg"><img src="images/temp_img09.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img10.jpg"><img src="images/temp_img10.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img11.jpg"><img src="images/temp_img11.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img12.jpg"><img src="images/temp_img12.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img13.jpg"><img src="images/temp_img13.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img14.jpg"><img src="images/temp_img14.jpg" width="380px"/></a></div>
-	<div class="imgShow"><a href="images/temp_img15.jpg"><img src="images/temp_img15.jpg" width="380px"/></a></div>
-    </div>
+		<div class="col-md-12 text-center" id="header">
+			<h1>
 
+				<button class='chevron-left'>
+					<img src="src/left.png"  height="20" width="20" />
+				</button>
+
+				<span id="title"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<small>
+
+
+				<button class='glyphicon-close'>
+					<!-- <img src="src/close.png"  height="10" width="10" style="margin-right: 5px;"/> -->
+				</button>
+				<button class='chevron-right'>
+					<img src="src/right.png" height="20px"  width="20px" />
+				</button>
+				
+			</small>
+			</h1>
+		</div>
+
+		<div class="col-md-8" id="img-container">
+			<!-- <p id="loading">loading...</p> -->
+			<img class="col-md-12" id="gif" />
+			<small>&nbsp;</small><br/>
+		</div>
+		<div class="col-md-4" id="desc-container">
+			<div class="col-md-12" id="description">
+				<h3>Description:</h3>
+				<p class="lead"></p>
+				<small><em>Source:</em> <span id="source"></span></small><br/>
+				<small><em>Topic:</em> <span id="topic"></span></small><br/>
+			</div>
+			<div class="col-md-12" id="dimensions">
+				<h3>Design Skill:</h3>
+				<h4 style="color:#3f5ea2">VISUAL DESIGN</h4>
+				<small ><em>VISUAL REPRESENTATION:</em> <span style="color:#3f5ea2" id="d1"></span></small><br/>
+				<small ><em><br>ORNAMENTATION:</em> <span style="color:#3f5ea2"  id="d2"></span></small><br/>
+				<small ><em><br>COLOR:</em> <span style="color:#3f5ea2" id="d3"></span></small><br/>
+				<small ><em><br>ARRANGEMENT:</em> <span style="color:#3f5ea2" id="d4"></span></small><br/>
+				<h4 style="color:#d26d28">NARRATIVE</h4>
+				<small  ><em><br>PHRASING:</em> <span  style="color:#d26d28" id="d5"></span></small><br/>
+				<small ><em><br>TELLING:</em> <span style="color:#d26d28" id="d6"></span></small><br/>
+			</div>
+		</div>
 
 	</div>
-
-
-</div>
-
-
-
-
-
-	<script type="text/javascript">
-		document.getElementsByClassName = function(className, tag, elm) {   
-			var testClass = new RegExp("(^|\s)" + className + "(\s|$)");   
-			var tag = tag || "*";   
-			var elm = elm || document;   
-			var elements = (tag == "*" && elm.all)? elm.all : elm.getElementsByTagName(tag);   
-			var returnElements = [];   
-			var current;   
-			var length = elements.length;   
-			for(var i=0; i<length; i++){   
-				current = elements[i];   
-				if(testClass.test(current.className)){   
-					returnElements.push(current);   
-				}   
-			}   
-			return returnElements;   
-		}
-			   
-		var margin = 10;
-		var boxes = document.getElementsByClassName('imgShow');
-		var con = document.getElementsByClassName('container-fluid');//fix
-		var text = document.getElementsByTagName('h4');
-		var boxWidth = boxes[0].offsetWidth+margin;
-		function show () {
-			var columnHeight=[];
-			var bodyWidth = document.body.offsetWidth;
-			var n = parseInt(bodyWidth/boxWidth);
-			var columnNum = n==0?1:n;
-			var bodyLeft = bodyWidth>=boxWidth?bodyWidth-columnNum*boxWidth:0;
-			con[0].style.left = parseInt(bodyLeft/2)-margin/2+'px';
-			for (var i = 0,l=boxes.length; i <l ; i++) {
-				if (i<columnNum) {
-					columnHeight[i]=boxes[i].offsetHeight+margin;
-					boxes[i].style.top = 0;
-					boxes[i].style.left = i*boxWidth+margin+'px';
-				} else{
-					var innsertColumn = min(columnHeight),
-						imgHeight = boxes[i].offsetHeight+margin;
-					boxes[i].style.top = columnHeight[innsertColumn]+'px';
-					boxes[i].style.left = innsertColumn*boxWidth+margin+'px';
-					columnHeight[innsertColumn] +=imgHeight; 
-				};
-		
-			};
-		};
-		function min (heightAarry) {
-			var minColumn = 0;
-			var minHeight = heightAarry[minColumn];
-			for (var i = 1,len=heightAarry.length; i < len; i++) {
-				var temp = heightAarry[i];
-				if (temp < minHeight) {
-					minColumn = i;
-					minHeight = temp;
-				};
-			};
-			return minColumn;
-		}
-		window.onload = function(){show();};
-		window.onresize = function(){show();};
-		
-		</script>
-
-
-<script type="text/javascript">
-	//tab切换效果
-	function setTab(name, cursel, n) {
-	  for(var i = 1; i <= n; i++) {
-		  console.log(name + i)
-		var menu = document.getElementById(name + i);
-		var con = document.getElementById("con_" + name + "_" + i);
-		//menu.className = i == cursel ? "cur" : "";//被点击后
-		con.style.display = i == cursel ? "block" : "none";
-	  }
-	}
-  </script>
-
-
 
 
 	<!-- draw function -->
@@ -520,16 +430,16 @@ for(var r =1;r<=38;r++){
 		img.setAttribute("height", "10px");
 		img.setAttribute("width", "10px");
         parent.appendChild(img);
-		parent.style.setProperty('background-color', '#dce4f7');}
+		parent.style.setProperty('background-color', '#ffc2c2');}
 	if(0.4<=ratio&&ratio<0.8){
 		var img = document.createElement("img");
 		img.setAttribute("src", "src/star.png");
 		img.setAttribute("height", "10px");
 		img.setAttribute("width", "10px");
         parent.appendChild(img);
-		parent.style.setProperty('background-color', '#dce4f7');}
-	if(0.1<=ratio&&ratio<0.4){parent.style.setProperty('background-color', '#dce4f7');}
-	if(0<ratio&&ratio<0.1){parent.style.setProperty('background-color', '#dce4f7');}
+		parent.style.setProperty('background-color', '#ffe1e1');}
+	if(0.1<=ratio&&ratio<0.4){parent.style.setProperty('background-color', '#ffebeb');}
+	if(0<ratio&&ratio<0.1){parent.style.setProperty('background-color', '#fff0f0');}
 	
 
 
@@ -775,66 +685,6 @@ imgLoad(gif, function() {
 
 
 	</script>
-
-<script>
-	//切换颜色
-
-    //title色*2，按钮高亮色，边框色和填充色
-	var colorset = [
-		["#007FE4","#00C1FF","#FFE82D","#cdd7e3"],
-		['#fc5185','#f5f5f5','#3fc1c9','#364f6b'],
-		['#769fcd','#b9d7ea','#d6e6f2','#f7fbfc'],
-		['#a6d0e4','#f9ffea','#ffecda','#d4a5a5'],
-		['#aedefc','#fff6f6','#ffdfdf','#fb929e'],
-		['#2f435e','#44566c','#ececec','#4b5e65'],
-['#ea9a4a','#56b4b7','#c73237','#87b748'],
-['#962d21','#df4937','#ededed','#333333'],
-['#d76050','#4f6ea2','#798ba1','#a12d1c'],
-['#363636','#b82b21','#62aaa7','#f6f6f6'],
-['#C58ADE','#B1BEEA','#90C4E9','#8095CE'],
-['#F7DB70','#EABEBF','#75CCE8','#A5DEE5'],
-['#FFE5C0','#EAD2DF','#EDB5D2','#C8A8DA'],
-['#879E46','#BBD5A6','#FBCEB9','#FEBD3D'],
-['#FF5685','#FED154','#FEB25E','#6AC7E6'],
-['#FB93AC','#9BC768','#FDC7D4','#FDD84C'],
-['#FFDFA2','#BFE4FF','#A3B5FD','#C3C5F8'],
-['#60EFDB','#BEF2E5','#C5E7F1','#79CEED'],
-['#A8DEE0','#F9E2AE','#FBC78D','#A7D676'],
-['#89D5C9','#FAC172','#FF8357','#E25B45'],
-['#D2A8B2','#EDE1E5','#DAE6E4','#EECF65'],
-	]
-	function changeColor(){
-
-		var maxC= colorset.length;
-        var changeC = Math.ceil(Math.random()*maxC);
-		console.log(changeC,colorset[changeC-1][0])
-
-		document.getElementById("maskColor").style.background=colorset[changeC-1][0];
-		for(var j = 0;j<document.getElementsByClassName("heavy-bottom-2 dimblue").length;j++){
-			document.getElementsByClassName("heavy-bottom-2 dimblue")[j].style.background=colorset[changeC-1][2];
-		}
-		for(var m= 0;m<document.getElementsByClassName("heavy-left").length;m++){
-			document.getElementsByClassName("heavy-left")[m].style.border="1px solid "+colorset[changeC-1][3];
-		}
-
-		for (var i=1; i<=38; i++){ //表格属性数
-        var siN = i<10?document.getElementsByName("si0"+i)[0]:document.getElementsByName("si"+i)[0];
-		siN.style.border="1px solid "+colorset[changeC-1][3];
-    }
-
-	for (var i=1; i<=4; i++){ //表格属性数
-	for(var j=1; j<=38; j++){
-        var sN = j<10?document.getElementsByName("s"+i+"0"+j)[0]:document.getElementsByName("s"+i+j)[0];
-		sN.style.border="1px solid "+colorset[changeC-1][3];
-		sN.style.background=colorset[changeC-1][1];
-	}
-    }
-		
-		
-
-
-	}
-</script>
 
 	
 
