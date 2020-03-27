@@ -8,6 +8,8 @@
 	
 	
 	<script type="text/javascript" src="libs/d3.v4.min.js"></script>
+	<script type="text/javascript" src="libs/echarts.min.js"></script>
+	<script type="text/javascript" src="libs/echarts-gl.min.js"></script>
 	<script type="text/javascript" src="libs/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="data/content.js"></script>
 
@@ -20,7 +22,6 @@
 
 
 <body>
-	<script type="text/javascript" src="libs3/echarts.all.js"></script>
 
 
 
@@ -68,12 +69,9 @@
 
 
 	<div style="display: none;" id="con_one_2"  > 
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
-		<p>nothing</p>
+		<div  style="width:600px;height:400px;top:200;"  id="scatter2D"></div>
+		<div  style="width:600px;height:400px;"  id="scatter3D"></div>>
+		
 	</div>
 
 
@@ -835,6 +833,211 @@ imgLoad(gif, function() {
 
 	}
 </script>
+
+
+<script type="text/javascript">
+//echarts
+	// 基于准备好的dom，初始化echarts实例
+	 var scatter2d = echarts.init(document.getElementById('scatter2D'));
+
+	 //--------------------
+	 option = {
+    xAxis: {},
+    yAxis: {},
+    series: [{
+        symbolSize: 20,
+        data: [
+            [10.0, 8.04],
+            [8.0, 6.95],
+            [13.0, 7.58],
+            [9.0, 8.81],
+            [11.0, 8.33],
+            [14.0, 9.96],
+            [6.0, 7.24],
+            [4.0, 4.26],
+            [12.0, 10.84],
+            [7.0, 4.82],
+            [5.0, 5.68]
+        ],
+        type: 'scatter'
+    }]
+};
+
+
+	 // 使用刚指定的配置项和数据显示图表。
+	 scatter2d.setOption(option);
+
+
+
+	 //3d
+	 var scatter3d = echarts.init(document.getElementById('scatter3D'));
+
+	 var datas=[["井深","Y坐标","人口密度","X坐标","Year"],
+	                  [10,14,11,2014],
+	                  [11,25,22,2015],
+	                  [12,36,33,2016],
+	                  [13,47,40,2017]
+	                 ];
+	 var x_min=100,
+	 x_max=100,
+	 y_min=100,
+	 y_max=100,
+	 xuanzhuan=0;
+	 //------------------------
+	 option3D = {
+		        grid3D:  {
+		        	boxWidth:  60,						//图件宽
+		        	boxHeight: 122,						//图件高
+		        	boxDepth:  60,						//图件长
+		        	height: '100%',						//容器高
+		        	width: '100%',						//容器宽
+		        	bottom: 'auto',						//3D图与下容器的距离
+	        		top:'auto',			   				//3D图与上容器的距离
+		        	axisLine:{
+		        		lineStyle:{
+		        			color:'yellow' 				//坐标轴轴线颜色
+		        		}
+		        	},
+				    splitLine:{
+				    	lineStyle:{
+		        			color:'#222'  				//分割线颜色
+		        		}
+					},
+					axisPointer:{
+						lineStyle:{
+		        			color:'#efe' 				//鼠标滑过分割线颜色
+		        		}
+					},
+					environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+						  offset: 0, color: '#00aaff' 	// 天空颜色
+						}, {
+						  offset: 0.7, color: '#998866' // 地面颜色
+						}, {
+						  offset: 1, color: '#998866' 	// 地面颜色
+						}], false),
+					postEffect:{
+						enable:false					//开启特效
+					},
+					viewControl:{
+						projection: 'perspective',		//默认为透视投影'perspective'，也支持设置为正交投影'orthographic'
+						autoRotate: true,				//自动旋转
+						autoRotateDirection: 'ccw',     //默认是 'cw' 从上往下看是顺时针 也可以取 'ccw'逆时针
+						autoRotateSpeed: 4,				//默认10 自转速度
+						autoRotateAfterStill: 5,		//默认3秒 鼠标静止操作后恢复自动旋转的时间间隔
+						damping: 0.8,					//鼠标进行旋转，缩放等操作时的迟滞因子，在大于 0 的时候鼠标在停止操作后，视角仍会因为一定的惯性继续运动（旋转和缩放）
+						animation: true,				//是否开启动画
+						animationDurationUpdate: 1000,	//过渡动画的时长
+						animationEasingUpdate: 'cubicInOut' //过渡动画的缓动效果
+					},
+					postEffect:{
+						enable:false					//是否开启后处理特效，默认关闭 不能开  浏览器会卡
+					}
+		        },
+		        xAxis3D: {
+	        		show: true,
+	        		name: '南北-X',
+	        		nameTextStyle:{
+	        			color: 'lime',
+		        		fontWeight: 'normal'
+	        		},
+	        		min:x_min,
+	        		max:x_max
+		        },
+		        yAxis3D: {
+		        	show: true,
+	        		name: '东西-Y',
+	        		nameTextStyle:{
+	        			color: 'lime',
+	        			fontWeight: 'normal'
+	        		},
+	        		min:y_min,
+	        		max:x_max
+		        },
+		        zAxis3D: {
+		        	show: true,
+	        		name: '井深-Z',
+	        		nameTextStyle:{
+	        			color: 'lime',
+		        		fontWeight: 'normal'
+	        		}
+		        },
+		        dataset: {
+		            dimensions: [
+		                '井深',
+		                'Y坐标',
+		                'X坐标',
+		                {name: '井名', type: 'ordinal'}
+		            ],
+		            source: datas
+		        },
+		        series: [
+		            {
+		                type: 'scatter3D',				//3D类型
+		                name: '测试',				    //名字
+		                //coordinateSystem: 'grid3D',	//使用地球三维地理坐标系
+		                //grid3DIndex: 0,				//坐标轴使用的 geo3D 组件的索引
+		                symbol:'diamond',				//点形状 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'
+		                symbolSize: 3.5,  				//点大小
+		                itemStyle: {
+		                	color:'white',		   		//点颜色
+		                	borderColor: 'green',  		//点边框颜色
+		                	opacity: 1,            		//点的透明度 1不透明
+		                	borderWidth: 0.5       		//图形描边宽度
+		                },
+		                label:{
+		                	show:false, 				//是否显示点上面的标签，默认false
+		                	distance: 15,				//标签与点的距离
+		                	position:'left',      		//标签位置
+		                	textStyle:{
+		                	    color:'black', 			//文字颜色
+		                    	borderWidth:0,  		//标签上边框宽度
+		                    	borderColor:'white',   	//边框颜色
+		                    	fontFamily:'宋体',		//标签字体
+		                    	fontSize:14,			//字体大小
+		                    	fontWeight:'normal'		//是否加粗 
+		                    }
+		                },
+		                emphasis:{
+		                	itemStyle:{
+		                		color:'green',			//鼠标移到点上的颜色变化
+		                		opacity:1,				//不透明度
+		                		borderWidth:0,			//图像描边宽度
+		                		borderColor:'#fff' 		//图形描边颜色
+		                	},
+		                	label:{
+		                		show:true,				//鼠标移动到点上是否显示标签
+		                		distance: 15,			//标签与点的距离
+		                    	position:'left',      	//标签位置
+		                    	textStyle:{
+		                    	    color:'black', 		//文字颜色
+		                        	borderWidth:0,  	//标签上边框宽度
+		                        	borderColor:'white',//边框颜色
+		                        	fontFamily:'宋体',	//标签字体
+		                        	fontSize:14,		//字体大小
+		                        	fontWeight:'normal'	//是否加粗 
+		                        }
+		                	}
+		                },
+		            	blendMode:'lighter',			//混合模式默认使用的'source-over'是通过 alpha 混合，而'lighter'是叠加模式，该模式可以让数据集中的区域因为叠加而产生高亮的效果。
+		            	silent:false,					//图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件。
+		            	animation:true,					//是否开启动画
+		            	animationDurationUpdate:500,	//过渡动画的时长
+		            	animationEasingUpdate:'cubicOut',//过渡动画的缓动效果
+		                encode: {
+		                    x: 'X坐标',
+		                    y: 'Y坐标',
+		                    z: '井深',
+		                    tooltip: [0, 1, 2, 3, 4]
+		                }
+		            }
+		        ]
+		    };
+
+
+	 	 // 使用刚指定的配置项和数据显示图表。
+		  scatter3d.setOption(option3D);
+	 
+	 </script>
 
 	
 
