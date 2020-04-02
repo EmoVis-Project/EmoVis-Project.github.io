@@ -918,12 +918,12 @@
 
         var option = {
             grid: {
-                top: 120
+                top: 150
             },
             xAxis: {},
             yAxis: {},
             legend: {
-                top: 80,
+                top: 100,
                 data: ['happy', 'surprised', 'excited', 'content',
                     'awestruck', 'hopeful', 'sad', 'bored', 'concerned',
                     'overwhelmed', 'shocked', 'annoyed'
@@ -1094,6 +1094,8 @@
                         show: true,
                         position: 'bottom',
                         formatter: '{@[2]}',
+                        fontSize: 14,
+                        backgroundColor: 'white',
                         // formatter: (params: params.value[params.data[0]]) => string
                     },
                     tooltip: {
@@ -1112,7 +1114,7 @@
                 subtext: '*shape denotes xxx; size denotes xxx; hover to view snapshot',
                 subtextStyle: {
                     fontSize: 16,
-                    lineHeight: 20,
+                    lineHeight: 40,
                 },
                 left: 'center',
                 top: 0,
@@ -1154,13 +1156,13 @@
                 subtext: '*shape denotes xxx; size denotes xxx; hover to view snapshot',
                 subtextStyle: {
                     fontSize: 16,
-                    lineHeight: 20,
+                    lineHeight: 40,
                 },
                 left: 'center',
                 top: 0,
             },
             legend: {
-                top: 80,
+                top: 100,
                 data: ['happy', 'surprised', 'excited', 'content',
                     'awestruck', 'hopeful', 'sad', 'bored', 'concerned',
                     'overwhelmed', 'shocked', 'annoyed'
@@ -1168,9 +1170,9 @@
             },
             grid3D: {
                 boxWidth: 220, //图件宽
-                boxHeight: 100, //图件高
+                boxHeight: 90, //图件高
                 boxDepth: 100, //图件长
-                top: 40,
+                top: 80,
                 axisLine: {
                     lineStyle: {
                         color: 'black' //坐标轴轴线颜色
