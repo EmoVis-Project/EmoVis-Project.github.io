@@ -662,34 +662,36 @@ document.getElementsByClassName = function(className, tag, elm) {
 				//获取格子的横纵属性用于查询
 				skill = "si"+ classname.slice(2,4);
 				emotion = classname.slice(1,2);  //1 happy 2 surprised 3 a  4 concerned
+				console.log("emotion"+emotion)
 				switch(emotion) {
-    			 case "1":
-				 emotion = "happy";
-				 emotionText = "happy";
-      			  break;
+    			 case "1":emotion = emotionText = "happy";
+					break;
+					
      			case "2":
 				 emotion =  emotionText= "surprised";
-						break;
-				case "3":
-				emotionText = emotion = "excited";
 				break;
-				case "4":
-				emotion = emotionText ="content";
-				case "5":
-				 emotion = emotionText = "awestruck";
-      			  break;
-     			case "6":
-				 emotion = emotionText= "hopeful";
-						break;
-				case "7":
-				emotionText = emotion = "sad";
+
+				case "3":emotion = emotionText = "exicted";
 				break;
-				case "8":
-				emotion = emotionText ="concerned";
+
+				case "4":emotion = emotionText ="content";
+				break;
+
+				case "5":emotion = emotionText = "awestruck";
 					break;
-				case "9":
-				emotion = emotionText ="shocked";
-       			 break;
+					
+     			case "6":emotion = emotionText= "hopeful";
+					break;
+
+				case "7":emotion = emotionText = "sad";
+				break;
+				
+				case "8":emotion = emotionText ="concerned";
+					break;
+
+				case "9":emotion = emotionText ="shocked";
+					break;
+					
    				  default:
       			  return null;
 				}
@@ -697,7 +699,7 @@ document.getElementsByClassName = function(className, tag, elm) {
 				//动态创建查询列表
 				table.length = 0; //refresh
 				for(var i=0;i<cues.length;i++){
-					
+					console.log(skill,cues[i])
                 if(cues[i].index.indexOf(emotion)  != -1  && cues[i][skill] == 1){
 					table.push(cues[i]);
 				}
