@@ -579,7 +579,7 @@ body {
 }
 
 #ds-container.container-fluid {
-    margin-top: 8vh;
+    margin-top: 4vh;
     padding: 0;
     /*-moz-box-shadow: 0px 0px 20px 10px rgba(25,25,25,.25);
         -webkit-box-shadow: 0px 0px 20px 10px rgba(25,25,25,.25);
@@ -875,6 +875,7 @@ small span.glyphicon:hover {
 
 #design-space tbody td {
     width: 20px;
+    text-align: center;
     /*列宽 */
 }
 
