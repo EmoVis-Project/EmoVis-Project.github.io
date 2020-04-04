@@ -523,43 +523,66 @@
         var colName;
         var sumName;
 
-        for (var c = 1; c <= 9; c++) {
-            for (var r = 1; r <= 21; r++) {
-                colName = "s" + c + r;
-                sumName = "s" + c + "Sum";
-                if (r <= 9) {
-                    colName = "s" + c + "0" + r;
-                }
+        function setHeatmap(theme) {
+            for (var c = 1; c <= 9; c++) {
+                for (var r = 1; r <= 21; r++) {
+                    colName = "s" + c + r;
+                    sumName = "s" + c + "Sum";
+                    if (r <= 9) {
+                        colName = "s" + c + "0" + r;
+                    }
 
-                var parent = document.getElementsByName(colName)[0];
-                var value = parent.innerHTML;
-                var sum = document.getElementsByName(sumName)[0].innerHTML;
-                var ratio = value / sum;
-                //四级
-                if (0.8 <= ratio) { //此级没有数字
-                    // var img = document.createElement("img");
-                    // img.setAttribute("src", "src/star.png");
-                    // img.setAttribute("height", "10px");
-                    // img.setAttribute("width", "10px");
-                    // parent.appendChild(img);
-                    parent.style.setProperty('background-color', '#6c9bef');
-                }
-                if (0.4 <= ratio && ratio < 0.8) {
-                    // var img = document.createElement("img");
-                    // img.setAttribute("src", "src/star.png");
-                    // img.setAttribute("height", "10px");
-                    // img.setAttribute("width", "10px");
-                    // parent.appendChild(img);
-                    parent.style.setProperty('background-color', '#84abf0');
-                }
-                if (0.1 <= ratio && ratio < 0.4) {
-                    parent.style.setProperty('background-color', '#adc7f5');
-                }
-                if (0 < ratio && ratio < 0.1) {
-                    parent.style.setProperty('background-color', '#dce4f7 ');
+                    var parent = document.getElementsByName(colName)[0];
+                    var value = parent.innerHTML;
+                    var sum = document.getElementsByName(sumName)[0].innerHTML;
+                    var ratio = value / sum;
+                    //四级
+                    if (0.8 <= ratio) { //此级没有数字
+                        // var img = document.createElement("img");
+                        // img.setAttribute("src", "src/star.png");
+                        // img.setAttribute("height", "10px");
+                        // img.setAttribute("width", "10px");
+                        // parent.appendChild(img);
+                        parent.style.setProperty('background-color', theme + 1 + ')');
+                        // parent.style.setProperty('opacity', 1);
+
+                    }
+                    if (0.5 <= ratio && ratio < 0.8) {
+                        // var img = document.createElement("img");
+                        // img.setAttribute("src", "src/star.png");
+                        // img.setAttribute("height", "10px");
+                        // img.setAttribute("width", "10px");
+                        // parent.appendChild(img);
+                        parent.style.setProperty('background-color', theme + 1 + ')');
+                        // parent.style.setProperty('opacity', 1);
+
+                    }
+                    if (0.4 <= ratio && ratio < 0.5) {
+                        parent.style.setProperty('background-color', theme + 0.8 + ')');
+                        // parent.style.setProperty('opacity', 0.8);
+
+                    }
+
+                    if (0.3 <= ratio && ratio < 0.4) {
+                        parent.style.setProperty('background-color', theme + 0.6 + ')');
+                        // parent.style.setProperty('opacity', 0.6);
+
+                    }
+                    if (0.2 <= ratio && ratio < 0.3) {
+                        parent.style.setProperty('background-color', theme + 0.4 + ')');
+                        // parent.style.setProperty('opacity', 0.4);
+
+                    }
+                    if (0 < ratio && ratio < 0.2) {
+                        parent.style.setProperty('background-color', theme + 0.2 + ')');
+                        // parent.style.setProperty('opacity', 0.2);
+
+                    }
                 }
             }
         }
+
+        setHeatmap('rgba(108, 155, 239,')
     </script>
 
 
@@ -912,15 +935,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         //前进后退关闭按钮
         d3.select(".chevron-right")
             .on("mouseup", function() {
@@ -956,32 +970,31 @@
 
 
 
-
-
     <script>
         //===============================功能：切换主题色
 
         //title色*2，按钮高亮色，边框色和填充色
         var colorset = [
-            ["happy", "#F2B39E"],
-            ["surprised", "#2A94C2"],
-            ["excited", "#E6362E"],
-            ["content", "#62C3DA"],
-            ["awestruck", "#31353A"],
-            ["hopeful", "#9ACC6D"],
-            ["sad", "#28344A"],
-            ["concerned", "#423E3C"],
-            ["shocked", "#991110"],
-            ["happy", "#A8D4E8"],
-            ["surprised", "#DDAD23"],
-            ["excited", "#EB5C36"],
-            ["content", "#DEC298"],
-            ["awestruck", "#2F4E67"],
-            ["hopeful", "#70C1CF"],
-            ["sad", "#7F8B89"],
-            ["concerned", "#A1B4A9"],
-            ["shocked", "#B34A4E"],
+            ["happy", 'rgba(242, 179, 158,', "#F2B39E"],
+            ["surprised", 'rgba(42, 148, 194,', "#2A94C2"],
+            ["excited", 'rgba(230, 54, 46,', "#E6362E"],
+            ["content", 'rgba(98, 195, 218,', "#62C3DA"],
+            ["awestruck", 'rgba(49, 53, 58,', "#31353A"],
+            ["hopeful", 'rgba(154, 204, 109,', "#9ACC6D"],
+            ["sad", 'rgba(40, 52, 74,', "#28344A"],
+            ["concerned", 'rgba(66, 62, 60,', "#423E3C"],
+            ["shocked", 'rgba(153, 17, 16,', "#991110"],
+            ["happy", 'rgba(168, 212, 232,', "#A8D4E8"],
+            ["surprised", 'rgba(222, 173, 34,', "#DDAD23"],
+            ["excited", 'rgba(235, 92, 54,', "#EB5C36"],
+            ["content", 'rgba(222, 194, 152,', "#DEC298"],
+            ["awestruck", 'rgba(47, 78, 103,', "#2F4E67"],
+            ["hopeful", 'rgba(112, 193, 207,', "#70C1CF"],
+            ["sad", 'rgba(127, 139, 137,', "#7F8B89"],
+            ["concerned", 'rgba(161, 180, 169,', "#A1B4A9"],
+            ["shocked", 'rgba(179, 74, 78,', "#B34A4E"],
         ]
+
 
         function changeColor() {
 
@@ -989,9 +1002,9 @@
             var changeC = Math.ceil(Math.random() * maxC);
             //console.log(changeC,colorset[changeC-1][0])
 
-            document.getElementById("maskColor").style.background = colorset[changeC - 1][1];
+            document.getElementById("maskColor").style.background = colorset[changeC - 1][2];
             for (var j = 0; j < document.getElementsByClassName("heavy-bottom-2 dimblue").length; j++) {
-                document.getElementsByClassName("heavy-bottom-2 dimblue")[j].style.background = colorset[changeC - 1][1];
+                document.getElementsByClassName("heavy-bottom-2 dimblue")[j].style.background = colorset[changeC - 1][2];
             }
 
             // //border
@@ -1004,13 +1017,16 @@
             // 	siN.style.border="1px solid "+colorset[changeC-1][3];
             // }
 
-            for (var i = 1; i <= 9; i++) { //表格属性数
-                for (var j = 1; j <= 21; j++) {
-                    var sN = j < 10 ? document.getElementsByName("s" + i + "0" + j)[0] : document.getElementsByName("s" + i + j)[0];
-                    //sN.style.border="1px solid "+colorset[changeC-1][3];
-                    sN.style.background = colorset[changeC - 1][1];
-                }
-            }
+            // for (var i = 1; i <= 9; i++) { //表格属性数
+            //     for (var j = 1; j <= 21; j++) {
+            //         var sN = j < 10 ? document.getElementsByName("s" + i + "0" + j)[0] : document.getElementsByName("s" + i + j)[0];
+            //         //sN.style.border="1px solid "+colorset[changeC-1][3];
+            //         sN.style.background = colorset[changeC - 1][1];
+            //     }
+            // }
+            setHeatmap(colorset[changeC - 1][1])
+
+
 
             //text
 
