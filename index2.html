@@ -31,11 +31,13 @@
 
 
     <div id="maskColor" style="background: linear-gradient(to right, #007FE4 0%,#00C1FF 100%);">
-        <img src="src/smile.png" width="45px" style="margin-top: 15px;margin-left: 45px;position:absolute" />
-        <h1 class="major">What Triggers Emotional Responses in Infographics?</h1>
-        <button class="tab_button_d" onclick="setTab('one',1,2)" id="one1">Design space</button>
-        <button class="tab_button_s" onclick="setTab('one',2,2)" id="one2">Dataset</button>
+        <img src="src/smile.png" width="30px" style="margin-top: 20px;margin-left: 20px;position:absolute" />
+        <h1 class="major">What Triggers Emotional Responses in an Infographic?</h1>
+        <button class="tab_button_d" onclick="setTab('one',1,2)" id="one1">design space</button>
+        <button class="tab_button_s" onclick="setTab('one',2,2)" id="one2">data set</button>
+        <!-- <button class = "button_c" onclick="changeColor()" ><img src="src/color.png" width="25px" style="margin-right: 5px;"></button>-->
     </div>
+
 
     <!-- <div style="width: 500px;text-align: center;"> 
 		<p>
@@ -53,24 +55,20 @@
 
 
     <div style="display: none;" id="con_one_2">
-        <div id="scatter2D"></div>
-        <div id="scatter3D"></div>
-        <a class="DownButtonNormal" style="margin-top: 50px;margin-bottom: 50px;font-size:26px; font-weight:600; color: black;" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
-            😄 Download dataset <img src="src/download.png" height="20px" width="20px" /> 
+        <a class="DownButtonNormal" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
+            <img src="src/download.png" height="20px" width="20px" /> Data
         </a>
-
+        <div id="scatter2D"></div>
+        <div id="scatter3D"></div>>
     </div>
 
-    <div id="con_one_1" style="display: block; clear: both; text-align:center;">
-        <p class="sub" style="margin-top: 100px;font-size:26px">Let's Create Affective Infographics</p>
-        <span style="font-size: 16px; font-weight: 400; color:#aaa ">
-            *Try click the button to change color theme 👉
-            <button class="button_c" onclick="changeColor()"><img src="src/color.png" width="25px" style="margin-left: -5px; margin-bottom: 5px;"></button>
-        </span>
 
-        <!-- <p style="margin-left: 650px;font-size: 10px;">Copyright©2020 Intelligent Big Data Visualization Lab, Tongji University ,Shanghai, China</p>
-	 -->
 
+
+    <div id="con_one_1" style="display: block;">
+        <p class="sub"> Interactive Design Space</p>
+        <button class="button_c" onclick="changeColor()"><img src="src/color.png" width="20px" style="margin-right: 5px;"></button>
+        <p id="colorset_Name"></p>
 
         <div class="container-fluid" id="ds-container">
             <div class="col-md-10 col-md-offset-1">
@@ -78,9 +76,9 @@
                     <tbody>
 
                         <!-- <tr>
-                <td colspan="2" class="no-border"><b></b></td>
-                <td colspan="37" class="heavy-bottom"><b >HINTS TO TRIGGER WANTED EMOTIONS</b></td>
-            </tr> -->
+                    <td colspan="2" class="no-border"><b></b></td>
+					<td colspan="37" class="heavy-bottom"><b >HINTS TO TRIGGER WANTED EMOTIONS</b></td>
+                </tr> -->
 
 
                         <tr>
@@ -98,19 +96,19 @@
                         </tr>
 
                         <!-- <tr>
-                <td colspan="2" class="no-border"><b></b></td>
-                <td colspan="4" class="heavy-bottom" title="Presentation of Information(呈现方式)" deta-title><b>Method</b></td>
-                <td colspan="2" class="heavy-bottom" title="Technique of data Rendering(数据渲染)" deta-title><b>Rendering</b></td>
-                <td colspan="3" class="heavy-bottom" title="Degree of Decoration(装饰程度)" deta-title><b>Data Ink Ratio<b></td> 
-                <td colspan="4" class="heavy-bottom" title="Decorative Techniques(装饰手法)" deta-title><b>Method<b></td> 
-                <td colspan="2" class="heavy-bottom" title="Add Meaning to Colors(为颜色添加意义)" deta-title><b>Semantics</b></td>
-                <td colspan="4" class="heavy-bottom" title="Color Ccheme(配色方案)" deta-title><b>Scheme</b></td>
-                <td colspan="3" class="heavy-bottom" title="Single Visualization as the Core(单个可视化)" deta-title><b>Single</b></td>
-                <td colspan="5" class="heavy-bottom" title="Multiple visualizations exist at the same time(多个可视化)" deta-title><b>Multiple</b></td>
-                <td colspan="4" class="heavy-bottom" title="Using rhetoric(使用修辞)" deta-title><b>Figurative Language</b></td>
-                <td colspan="4" class="heavy-bottom" title="Dialogue with readers(与读者对话)" deta-title><b>Dialogue</b></td>
-                <td colspan="3" class="heavy-bottom" title="Design plot(设计情节)" deta-title><b>Plot</b></td>
-            </tr> -->
+                    <td colspan="2" class="no-border"><b></b></td>
+                    <td colspan="4" class="heavy-bottom" title="Presentation of Information(呈现方式)" deta-title><b>Method</b></td>
+					<td colspan="2" class="heavy-bottom" title="Technique of data Rendering(数据渲染)" deta-title><b>Rendering</b></td>
+					<td colspan="3" class="heavy-bottom" title="Degree of Decoration(装饰程度)" deta-title><b>Data Ink Ratio<b></td> 
+					<td colspan="4" class="heavy-bottom" title="Decorative Techniques(装饰手法)" deta-title><b>Method<b></td> 
+					<td colspan="2" class="heavy-bottom" title="Add Meaning to Colors(为颜色添加意义)" deta-title><b>Semantics</b></td>
+					<td colspan="4" class="heavy-bottom" title="Color Ccheme(配色方案)" deta-title><b>Scheme</b></td>
+					<td colspan="3" class="heavy-bottom" title="Single Visualization as the Core(单个可视化)" deta-title><b>Single</b></td>
+					<td colspan="5" class="heavy-bottom" title="Multiple visualizations exist at the same time(多个可视化)" deta-title><b>Multiple</b></td>
+					<td colspan="4" class="heavy-bottom" title="Using rhetoric(使用修辞)" deta-title><b>Figurative Language</b></td>
+					<td colspan="4" class="heavy-bottom" title="Dialogue with readers(与读者对话)" deta-title><b>Dialogue</b></td>
+					<td colspan="3" class="heavy-bottom" title="Design plot(设计情节)" deta-title><b>Plot</b></td>
+				</tr> -->
 
 
 
@@ -450,6 +448,16 @@
             </div>
 
         </div>
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- detail infoG -->
@@ -1024,332 +1032,147 @@
         }
     </script>
 
+
     <script type="text/javascript">
-        //echarts
+        //=====================散点图==========================echarts
         // 基于准备好的dom，初始化echarts实例
         var scatter2d = echarts.init(document.getElementById('scatter2D'));
 
-        //数据格式，需替换
-
-        var scatter2_cat = [
-            [-0.5996829041813307, -0.1635919177502726, 'happy'],
-            [-0.048884322351258, -0.13182735623576852, 'surprised'],
-            [-0.5632351185515618, -0.14500599393544547, 'excited'],
-            [-0.4688717107828682, -0.11517010685349165, 'content'],
-            [-0.2115163330964271, -0.06644448508129913, 'awestruck'],
-            [-0.34599454264744345, -0.2983127385825039, 'hopeful'],
-            [1.1114965503483922, -0.4504151424126964, 'sad'],
-            [-0.0057389953950101255, 0.7487136007546221, 'bored'],
-            [0.8625378501497745, -0.3651491706254316, 'concerned'],
-            [0.24513487943785175, 0.5820856751874635, 'overwhelmed'],
-            [0.5940886632746911, -0.2657488547966196, 'shocked'],
-            [0.37841336414752696, 0.5495382254876126, 'annoyed']
-        ];
-
-        var schema = [{
-            name: 'id',
-            index: 0,
-            text: 'Pic id'
-        }, {
-            name: 'emotion',
-            index: 1,
-            text: 'Primary emotion'
-        }, {
-            name: 'score',
-            index: 2,
-            text: 'Mean score'
-        }, ];
-
         //--------------------
-
-
-        var option = {
-            grid: {
-                top: 150
-            },
+        option = {
             xAxis: {},
             yAxis: {},
-            legend: {
-                top: 100,
-                data: ['happy', 'surprised', 'excited', 'content',
-                    'awestruck', 'hopeful', 'sad', 'bored', 'concerned',
-                    'overwhelmed', 'shocked', 'annoyed'
-                ]
-            },
-            animation: true,
-            tooltip: {
-                padding: 10,
-                backgroundColor: '#222',
-                borderColor: '#777',
-                borderWidth: 1,
-                formatter: function(obj) {
-                    var value = obj.value;
-                    return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
-                        'Pic id: ' + value[2] +
-                        '</div>' +
-                        // '<img src= "./src/5.jpg"></img>' + '<br>' +
-                        '<img src= "./src/' + value[5] + '" style = "height:100px">' + '</img>' + '<br>' +
-                        schema[1].text + '：' + value[4] + '<br>' +
-                        schema[2].text + '：' + value[3] + '<br>'
-                }
-            },
             series: [
-                //10个序列（9种情绪的图片+情绪）
+                //两个序列	
                 {
-                    name: "happy",
-                    symbolSize: 3,
-                    data: data[0],
+                    symbolSize: 2,
+                    data: scatter2,
                     type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
                     itemStyle: {
-                        color: "#E05757"
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(120, 36, 50, 0.5)',
+                        shadowOffsetY: 5,
+                        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                            offset: 0,
+                            color: 'rgb(251, 118, 123)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(204, 46, 72)'
+                        }])
                     }
                 }, {
-                    name: "surprised",
-                    symbolSize: 3,
-                    data: data[1],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#EEC947',
-                    }
-                }, {
-                    name: "excited",
-                    symbolSize: 3,
-                    data: data[2],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: "#F38D31"
-                    }
-                }, {
-                    name: "content",
-                    symbolSize: 3,
-                    data: data[3],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#F09BA6',
-                    }
-                }, {
-                    name: "awestruck",
-                    symbolSize: 3,
-                    data: data[4],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#B17AA7',
-                    }
-                }, {
-                    name: "hopeful",
-                    symbolSize: 3,
-                    data: data[5],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#B7D994',
-                    }
-                }, {
-                    name: "sad",
-                    symbolSize: 3,
-                    data: data[6],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#76B7B6',
-                    }
-                }, {
-                    name: "bored",
-                    symbolSize: 3,
-                    data: data[7],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: 'gray',
-                    }
-                }, {
-                    name: "concerned",
-                    symbolSize: 3,
-                    data: data[8],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#4E79A8',
-                    }
-                }, {
-                    name: "overwhelmed",
-                    symbolSize: 3,
-                    data: data[9],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: 'grey',
-                    }
-                }, {
-                    name: "shocked",
-                    symbolSize: 3,
-                    data: data[10],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#189366',
-                    }
-                }, {
-                    name: "annoyed",
-                    symbolSize: 3,
-                    data: data[11],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: 'grey',
-                    }
-                }, {
-                    name: "cat",
-                    symbolSize: 3,
+                    symbolSize: 10,
                     data: scatter2_cat,
                     type: 'scatter',
-                    symbol: 'triangle',
-                    symbolSize: 12,
                     itemStyle: {
-                        color: 'black',
-                    },
-                    label: {
-                        show: true,
-                        position: 'bottom',
-                        formatter: '{@[2]}',
-                        fontSize: 14,
-                        backgroundColor: 'white',
-                        // formatter: (params: params.value[params.data[0]]) => string
-                    },
-                    tooltip: {
-                        show: false,
+                        shadowBlur: 10,
+                        shadowColor: 'rgba(25, 100, 150, 0.5)',
+                        shadowOffsetY: 5,
+                        color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                            offset: 0,
+                            color: 'rgb(129, 227, 238)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(25, 183, 207)'
+                        }])
                     }
                 }
-
             ],
 
             title: {
-                text: 'Explorable CA Space For Affective Infographics',
-                textStyle: {
-                    fontSize: 26,
-                    fontFamily: ''
-                },
-                subtext: '*shape denotes xxx; size denotes xxx; hover to view snapshot',
-                subtextStyle: {
-                    fontSize: 16,
-                    lineHeight: 40,
-                },
-                left: 'center',
-                top: 0,
+                text: 'xxxxxx',
+                subtext: 'By xxxxx',
+                // sublink: 'https://github.com/ecomfe/echarts-stat',
+                left: 'center'
             },
 
         };
 
+        // option2 = {
+        //     xAxis: {},
+        //     yAxis: {},
+        //     series: [{
+        //         symbolSize: 5,
+        //         data: scatter2_cat,
+        //         type: 'scatter'
+        //     }]
+        // };
+
+
+
         // 使用刚指定的配置项和数据显示图表。
         scatter2d.setOption(option);
+        //  scatter2d.setOption(option2);
 
 
-        // ——————————————————————————————3d scatter——————————————————————————————
+        //color
+
+
+
+
+        //3d
         var scatter3d = echarts.init(document.getElementById('scatter3D'));
 
-        var scatter3_cat = [
-            [-0.5996829041813307, -0.1572676696030792, -0.1635919177502726, 'happy'],
-            [-0.048884322351258, 0.10730146070149993, -0.13182735623576852, 'surprised'],
-            [-0.5632351185515618, 0.09035956252445268, -0.14500599393544547, 'excited'],
-            [-0.4688717107828682, -0.20704400027948364, -0.11517010685349165, 'content'],
-            [-0.2115163330964271, 0.4934296810783273, -0.06644448508129913, 'awestruck'],
-            [-0.34599454264744345, -0.095832541335203, -0.2983127385825039, 'hopeful'],
-            [1.1114965503483922, -0.31190301488710137, -0.4504151424126964, 'sad'],
-            [-0.0057389953950101255, -0.4839162002946629, 0.7487136007546221, 'bored'],
-            [0.8625378501497745, -0.12713090748071068, -0.3651491706254316, 'concerned'],
-            [0.24513487943785175, 0.4009808471922368, 0.5820856751874635, 'overwhelmed'],
-            [0.5940886632746911, 0.2211195363078572, -0.2657488547966196, 'shocked'],
-            [0.37841336414752696, -0.07540914355159774, 0.5495382254876126, 'annoyed']
-        ];
-        //数据格式，需替换
-
-
-        var option3D = {
-            title: {
-                text: 'Explorable CA Space For Affective Infographics',
-                textStyle: {
-                    fontSize: 26,
-                    fontFamily: ''
-                },
-                subtext: '*shape denotes xxx; size denotes xxx; hover to view snapshot',
-                subtextStyle: {
-                    fontSize: 16,
-                    lineHeight: 40,
-                },
-                left: 'center',
-                top: 0,
-            },
-            legend: {
-                top: 100,
-                data: ['happy', 'surprised', 'excited', 'content',
-                    'awestruck', 'hopeful', 'sad', 'bored', 'concerned',
-                    'overwhelmed', 'shocked', 'annoyed'
-                ]
-            },
+        //  var datas=[["井深","Y坐标","人口密度","X坐标","Year"],
+        //                   [10,14,11,2014],
+        //                   [11,25,22,2015],
+        //                   [12,36,33,2016],
+        //                   [13,47,40,2017]
+        //                  ];
+        var datas = scatter3;
+        var x_min = -1,
+            x_max = 1,
+            y_min = -1,
+            y_max = 1,
+            xuanzhuan = 0;
+        //------------------------
+        option3D = {
             grid3D: {
-                boxWidth: 220, //图件宽
-                boxHeight: 90, //图件高
-                boxDepth: 100, //图件长
-                top: 80,
+                boxWidth: 122, //图件宽
+                boxHeight: 122, //图件高
+                boxDepth: 60, //图件长
+                height: '100%', //容器高
+                width: '100%', //容器宽
+                bottom: 'auto', //3D图与下容器的距离
+                top: 'auto', //3D图与上容器的距离
                 axisLine: {
                     lineStyle: {
-                        color: 'black' //坐标轴轴线颜色
+                        color: 'white' //坐标轴轴线颜色
                     }
                 },
                 splitLine: {
                     lineStyle: {
-                        color: '#ccc'
+                        color: 'white' //分割线颜色
                     }
                 },
                 axisPointer: {
-                    show: true,
                     lineStyle: {
-                        color: 'grey' //鼠标滑过分割线颜色
+                        color: 'white' //鼠标滑过分割线颜色
                     }
                 },
-                environment: "white",
+                environment: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#2F4F4F' // 天空颜色
+                }, {
+                    offset: 0.7,
+                    color: '#2F4F4F' // 地面颜色
+                }, {
+                    offset: 1,
+                    color: '#2F4F4F' // 地面颜色
+                }], false),
+                postEffect: {
+                    enable: false //开启特效
+                },
                 viewControl: {
                     projection: 'perspective', //默认为透视投影'perspective'，也支持设置为正交投影'orthographic'
-                    autoRotate: false, //自动旋转
-                    distance: 200,
-                    minDistance: 10,
-                    maxDistance: 200,
-                    zoomSensitivity: 1,
-                    alpha: 90,
-                    minAlpha: 0,
-                    maxAlpha: 0,
-                    minBeta: 0,
-                    maxBeta: 90,
-                    beta: 0,
+                    autoRotate: true, //自动旋转
+                    autoRotateDirection: 'ccw', //默认是 'cw' 从上往下看是顺时针 也可以取 'ccw'逆时针
+                    autoRotateSpeed: 4, //默认10 自转速度
+                    autoRotateAfterStill: 5, //默认3秒 鼠标静止操作后恢复自动旋转的时间间隔
+                    damping: 0.8, //鼠标进行旋转，缩放等操作时的迟滞因子，在大于 0 的时候鼠标在停止操作后，视角仍会因为一定的惯性继续运动（旋转和缩放）
+                    animation: true, //是否开启动画
+                    animationDurationUpdate: 1000, //过渡动画的时长
+                    animationEasingUpdate: 'cubicInOut' //过渡动画的缓动效果
                 },
                 postEffect: {
                     enable: false //是否开启后处理特效，默认关闭 不能开  浏览器会卡
@@ -1359,217 +1182,109 @@
                 show: true,
                 name: 'X',
                 nameTextStyle: {
-                    color: 'transparent',
+                    color: 'white',
+                    fontWeight: 'normal'
                 },
-                // min: -1,
-                // max: 1.2
-                axisTick: {
-                    show: false
-                }
+                min: x_min,
+                max: x_max
             },
             yAxis3D: {
-                show: false,
-                name: 'Z',
-                nameTextStyle: {
-                    color: 'transparent',
-                },
-                axisTick: {
-                    show: false
-                }
-                // min: -0.6,
-                // max: 1.5
-            },
-            zAxis3D: {
-                show: false,
+                show: true,
                 name: 'Y',
                 nameTextStyle: {
-                    color: 'transparent',
+                    color: 'white',
+                    fontWeight: 'normal'
                 },
-                axisTick: {
-                    show: false
+                min: y_min,
+                max: x_max
+            },
+            zAxis3D: {
+                show: true,
+                name: 'Z-cat',
+                nameTextStyle: {
+                    color: 'white',
+                    fontWeight: 'normal'
                 }
             },
-            tooltip: {
-                padding: 10,
-                backgroundColor: '#222',
-                borderColor: '#777',
-                borderWidth: 1,
-                formatter: function(obj) {
-                    var value = obj.value;
-                    return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
-                        'Pic id: ' + value[3] +
-                        '</div>' +
-                        // '<img src= "./src/5.jpg"></img>' + '<br>' +
-                        '<img src= "./src/' + value[6] + '" style = "height:100px">' + '</img>' + '<br>' +
-                        schema[1].text + '：' + value[5] + '<br>' +
-                        schema[2].text + '：' + value[4] + '<br>'
-                }
+            dataset: {
+                dimensions: [
+                    'Z',
+                    'Y',
+                    'X', {
+                        name: '井名',
+                        type: 'ordinal'
+                    }
+                ],
+                source: datas
             },
             series: [{
-                name: "happy",
-                symbolSize: 3,
-                data: data2[0],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#E05757"
-                }
-            }, {
-                name: "surprised",
-                symbolSize: 3,
-                data: data2[1],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#EEC947"
-                }
-            }, {
-                name: "excited",
-                symbolSize: 3,
-                data: data2[2],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#F38D31"
-                }
-            }, {
-                name: "content",
-                symbolSize: 3,
-                data: data2[3],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#F09BA6"
-                }
-            }, {
-                name: "awestruck",
-                symbolSize: 3,
-                data: data2[4],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#B17AA7"
-                }
-            }, {
-                name: "hopeful",
-                symbolSize: 3,
-                data: data2[5],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#B7D994"
-                }
-            }, {
-                name: "sad",
-                symbolSize: 3,
-                data: data2[6],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#76B7B6"
-                }
-            }, {
-                name: "bored",
-                symbolSize: 3,
-                data: data2[7],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "grey"
-                }
-            }, {
-                name: "concerned",
-                symbolSize: 3,
-                data: data2[8],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#4E79A8"
-                }
-            }, {
-                name: "overwhelmed",
-                symbolSize: 3,
-                data: data2[9],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "grey"
-                }
-            }, {
-                name: "shocked",
-                symbolSize: 3,
-                data: data2[10],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#189366"
-                }
-            }, {
-                name: "annoyed",
-                symbolSize: 3,
-                data: data2[11],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "grey"
-                }
-            }, {
                 type: 'scatter3D', //3D类型
-                name: 'cat', //名字
-                symbol: 'triangle', //点形状 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'
-                symbolSize: 10, //点大小
-                data: scatter3_cat,
+                name: '测试', //名字
+                //coordinateSystem: 'grid3D',	//使用地球三维地理坐标系
+                //grid3DIndex: 0,				//坐标轴使用的 geo3D 组件的索引
+                symbol: 'diamond', //点形状 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'
+                symbolSize: 3.5, //点大小
                 itemStyle: {
-                    color: 'black', //点颜色
+                    color: '#2F4F4F', //点颜色
+                    borderColor: '#2F4F4F', //点边框颜色
+                    opacity: 1, //点的透明度 1不透明
+                    borderWidth: 0.5 //图形描边宽度
                 },
                 label: {
-                    show: true, //是否显示点上面的标签，默认false
-                    position: 'bottom', //标签位置
-                },
-                tooltip: {
-                    show: false
+                    show: false, //是否显示点上面的标签，默认false
+                    distance: 15, //标签与点的距离
+                    position: 'left', //标签位置
+                    textStyle: {
+                        color: '#2F4F4F', //文字颜色
+                        borderWidth: 0, //标签上边框宽度
+                        borderColor: '#2F4F4F', //边框颜色
+                        fontFamily: '宋体', //标签字体
+                        fontSize: 14, //字体大小
+                        fontWeight: 'normal' //是否加粗 
+                    }
                 },
                 emphasis: {
                     itemStyle: {
-                        // color: 'brown',
-                        // borderWidth: 10,
-                        // borderColor: 'black'
+                        color: '#2F4F4F', //鼠标移到点上的颜色变化
+                        opacity: 1, //不透明度
+                        borderWidth: 0, //图像描边宽度
+                        borderColor: '#fff' //图形描边颜色
+                    },
+                    label: {
+                        show: true, //鼠标移动到点上是否显示标签
+                        distance: 15, //标签与点的距离
+                        position: 'left', //标签位置
+                        textStyle: {
+                            color: '#2F4F4F', //文字颜色
+                            borderWidth: 0, //标签上边框宽度
+                            borderColor: 'white', //边框颜色
+                            fontFamily: 'SimHei', //标签字体
+                            fontSize: 14, //字体大小
+                            fontWeight: 'normal' //是否加粗 
+                        }
                     }
                 },
-                animation: true
-
+                blendMode: 'lighter', //混合模式默认使用的'source-over'是通过 alpha 混合，而'lighter'是叠加模式，该模式可以让数据集中的区域因为叠加而产生高亮的效果。
+                silent: false, //图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件。
+                animation: true, //是否开启动画
+                animationDurationUpdate: 500, //过渡动画的时长
+                animationEasingUpdate: 'cubicOut', //过渡动画的缓动效果
+                encode: {
+                    x: 'X坐标',
+                    y: 'Y坐标',
+                    z: '井深',
+                    tooltip: [0, 1, 2, 3, 4]
+                }
             }]
         };
+
 
         // 使用刚指定的配置项和数据显示图表。
         scatter3d.setOption(option3D);
     </script>
 
 
+
 </body>
 
-</html5
+</html>
