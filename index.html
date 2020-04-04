@@ -29,13 +29,7 @@
     <!-- <div class="container-fluid text-center" id="major"> -->
 
 
-    <!-- <a class="DownButtonNormal" 
-	name="DownLoadHistEvent" 
-	download="EmotionInfoG.csv" 
-	href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
-	<img src="src/download.png" height="20px" width="20px"/>
-	Data
-	</a> -->
+
     <div id="maskColor" style="background: linear-gradient(to right, #007FE4 0%,#00C1FF 100%);">
         <img src="src/smile.png" width="45px" style="margin-top: 15px;margin-left: 45px;position:absolute" />
         <h1 class="major">What Triggers Emotional Responses in Infographics?</h1>
@@ -43,17 +37,29 @@
         <button class="tab_button_s" onclick="setTab('one',2,2)" id="one2">Dataset</button>
     </div>
 
+    <!-- <div style="width: 500px;text-align: center;"> 
+		<p>
+		Here is intro.
+		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-    <div style="display: none; margin-left:50px; width: 80%" id="con_one_2">
-        <div id="scatter2D" style="height: 600px"></div>
-        <div id="scatter3D" style="height: 600px"></div>
-        <a class="DownButtonNormal" style="margin-top: 50px;margin-bottom: 50px;font-size:26px; font-weight: 600; color: black;" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">😊 Download dataset
-            <img src="src/download.png" height="20px" width="20px" /> 
+		</p>
+	</div> -->
+
+    <!-- <p style="margin-left: 650px;font-size: 10px;">Copyright©2020 Intelligent Big Data Visualization Lab, Tongji University ,Shanghai, China</p>
+	 -->
+
+
+
+
+    <div style="display: none;" id="con_one_2">
+        <div id="scatter2D"></div>
+        <div id="scatter3D"></div>
+        <a class="DownButtonNormal" style="margin-top: 50px;margin-bottom: 50px;font-size:26px; font-weight:600; color: black;" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
+            😄 Download dataset <img src="src/download.png" height="20px" width="20px" /> 
         </a>
 
-
     </div>
-
 
     <div id="con_one_1" style="display: block; clear: both; text-align:center;">
         <p class="sub" style="margin-top: 100px;font-size:26px">Let's Create Affective Infographics</p>
@@ -445,9 +451,432 @@
 
             <!-- 弹出页构建 -->
             <button class='glyphicon-close'>
+
+
+
+	<div id="con_one_1" style="display: block;" >
+		<p class= "sub"> Interactive Design Space</p>
+		<button class = "button_c" onclick="changeColor()" ><img src="src/color.png" width="20px" style="margin-right: 5px;"></button>
+            <p id="colorset_Name"></p>
+
+            <div class="container-fluid" id="ds-container">
+                <div class="col-md-10 col-md-offset-1">
+                    <table class="table table-condensed table-bordered" id="design-space" style="table-layout:automatic;border-radius: 5px;">
+                        <tbody>
+
+                            <!-- <tr>
+                    <td colspan="2" class="no-border"><b></b></td>
+					<td colspan="37" class="heavy-bottom"><b >HINTS TO TRIGGER WANTED EMOTIONS</b></td>
+                </tr> -->
+
+
+                            <tr>
+                                <td colspan="2" class="no-border"><b></b></td>
+                                <td colspan="10" class="heavy-bottom black" title="xxx" deta-title><b style="color:white">GRAPHIC DESIGN</b></td>
+                                <td colspan="11" class="heavy-bottom black" title="xxx" deta-title><b style="color:white">NARRATIVE</b></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2" class="no-border"><b></b></td>
+                                <td colspan="6" class="heavy-bottom-2 dimblue" title="xx" deta-title><b style="color:white;font-size: 9px;">Data Visualization</b></td>
+                                <td colspan="4" class="heavy-bottom-2 dimblue" title="xx" deta-title><b style="color:white;font-size: 10px;">Decoration</b></td>
+                                <td colspan="5" class="heavy-bottom-2 dimblue" title="xx" deta-title><b style="color:white;font-size: 10px;">Data Explanation</b></td>
+                                <td colspan="6" class="heavy-bottom-2 dimblue" title="xx" deta-title><b style="color:white;font-size: 10px;">Rhetorics</b></td>
+                            </tr>
+
+                            <!-- <tr>
+                    <td colspan="2" class="no-border"><b></b></td>
+                    <td colspan="4" class="heavy-bottom" title="Presentation of Information(呈现方式)" deta-title><b>Method</b></td>
+					<td colspan="2" class="heavy-bottom" title="Technique of data Rendering(数据渲染)" deta-title><b>Rendering</b></td>
+					<td colspan="3" class="heavy-bottom" title="Degree of Decoration(装饰程度)" deta-title><b>Data Ink Ratio<b></td> 
+					<td colspan="4" class="heavy-bottom" title="Decorative Techniques(装饰手法)" deta-title><b>Method<b></td> 
+					<td colspan="2" class="heavy-bottom" title="Add Meaning to Colors(为颜色添加意义)" deta-title><b>Semantics</b></td>
+					<td colspan="4" class="heavy-bottom" title="Color Ccheme(配色方案)" deta-title><b>Scheme</b></td>
+					<td colspan="3" class="heavy-bottom" title="Single Visualization as the Core(单个可视化)" deta-title><b>Single</b></td>
+					<td colspan="5" class="heavy-bottom" title="Multiple visualizations exist at the same time(多个可视化)" deta-title><b>Multiple</b></td>
+					<td colspan="4" class="heavy-bottom" title="Using rhetoric(使用修辞)" deta-title><b>Figurative Language</b></td>
+					<td colspan="4" class="heavy-bottom" title="Dialogue with readers(与读者对话)" deta-title><b>Dialogue</b></td>
+					<td colspan="3" class="heavy-bottom" title="Design plot(设计情节)" deta-title><b>Plot</b></td>
+				</tr> -->
+
+
+
+                            <tr style="height: 150px;">
+                                <td name="si1" class="heavy-left">
+                                    <div style="margin-top: 60px;text-align: center;font-weight:900;"><span><small>Emotions</small></span></div>
+                                </td>
+                                <td name="si2" class="heavy-left">
+                                    <div style="margin-top: 60px;text-align: center;font-weight:900;"><span><small>Number<br>of <br>Examples</small></span></div>
+                                </td>
+
+                                <td name="si01" class=" si01 rotate">
+                                    <div> <span>	<small id="si01">	color pallat	</small>	</span> </div>
+                                </td>
+                                <td name="si02" class=" si02 rotate">
+                                    <div> <span>	<small id="si02">	semantic color	</small>	</span> </div>
+                                </td>
+                                <td name="si03" class=" si03 rotate">
+                                    <div> <span>	<small id="si03">	pictogram	</small>	</span> </div>
+                                </td>
+                                <td name="si04" class=" si04 rotate">
+                                    <div> <span>	<small id="si04">	visual metaphor	</small>	</span> </div>
+                                </td>
+                                <td name="si05" class=" si05 rotate">
+                                    <div> <span>	<small id="si05">	multidimensional metaphor	</small>	</span> </div>
+                                </td>
+                                <td name="si06" class=" si06 rotate">
+                                    <div> <span>	<small id="si06">	embodied positioning	</small>	</span> </div>
+                                </td>
+                                <td name="si07" class=" si07 rotate">
+                                    <div> <span>	<small id="si07">	custom illustration	</small>	</span> </div>
+                                </td>
+                                <td name="si08" class=" si08 rotate">
+                                    <div> <span>	<small id="si08">	realistic texture	</small>	</span> </div>
+                                </td>
+                                <td name="si09" class=" si09 rotate">
+                                    <div> <span>	<small id="si09">	scenery/idea framing	</small>	</span> </div>
+                                </td>
+                                <td name="si10" class=" si10 rotate">
+                                    <div> <span>	<small id="si10">	photo of human face	</small>	</span> </div>
+                                </td>
+                                <td name="si11" class=" si11 rotate">
+                                    <div> <span>	<small id="si11">	emphasis	</small>	</span> </div>
+                                </td>
+                                <td name="si12" class=" si12 rotate">
+                                    <div> <span>	<small id="si12">	contrast / turning point	</small>	</span> </div>
+                                </td>
+                                <td name="si13" class=" si13 rotate">
+                                    <div> <span>	<small id="si13">	narrowing down	</small>	</span> </div>
+                                </td>
+                                <td name="si14" class=" si14 rotate">
+                                    <div> <span>	<small id="si14">	analogy	</small>	</span> </div>
+                                </td>
+                                <td name="si15" class=" si15 rotate">
+                                    <div> <span>	<small id="si15">	deliberate omission	</small>	</span> </div>
+                                </td>
+                                <td name="si16" class=" si16 rotate">
+                                    <div> <span>	<small id="si16">	addressing the audience	</small>	</span> </div>
+                                </td>
+                                <td name="si17" class=" si17 rotate">
+                                    <div> <span>	<small id="si17">	calling to action / slogan	</small>	</span> </div>
+                                </td>
+                                <td name="si18" class=" si18 rotate">
+                                    <div> <span>	<small id="si18">	rhetorical question	</small>	</span> </div>
+                                </td>
+                                <td name="si19" class=" si19 rotate">
+                                    <div> <span>	<small id="si19">	metaphor / simile	</small>	</span> </div>
+                                </td>
+                                <td name="si20" class=" si20 rotate">
+                                    <div> <span>	<small id="si20">	personification	</small>	</span> </div>
+                                </td>
+                                <td name="si21" class=" si21 rotate">
+                                    <div> <span>	<small id="si21">	irony	</small>	</span> </div>
+                                </td>
+
+
+
+
+                                <tr>
+                                    <td class="heavy-left"><b>happy</b></td>
+                                    <td class="heavy-left"><b name="s1Sum">48</b></td>
+                                    <td name="s101" class="active-cell s101">0</td>
+                                    <td name="s102" class="active-cell s102">20</td>
+                                    <td name="s103" class="active-cell s103">17</td>
+                                    <td name="s104" class="active-cell s104">6</td>
+                                    <td name="s105" class="active-cell s105">1</td>
+                                    <td name="s106" class="active-cell s106">3</td>
+                                    <td name="s107" class="active-cell s107">26</td>
+                                    <td name="s108" class="active-cell s108">3</td>
+                                    <td name="s109" class="active-cell s109">2</td>
+                                    <td name="s110" class="active-cell s110">0</td>
+                                    <td name="s111" class="active-cell s111">5</td>
+                                    <td name="s112" class="active-cell s112">1</td>
+                                    <td name="s113" class="active-cell s113">0</td>
+                                    <td name="s114" class="active-cell s114">2</td>
+                                    <td name="s115" class="active-cell s115">0</td>
+                                    <td name="s116" class="active-cell s116">11</td>
+                                    <td name="s117" class="active-cell s117">2</td>
+                                    <td name="s118" class="active-cell s118">2</td>
+                                    <td name="s119" class="active-cell s119">0</td>
+                                    <td name="s120" class="active-cell s120">1</td>
+                                    <td name="s121" class="active-cell s121">0</td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+                                    <td class="heavy-left"><b>suprised</b></td>
+                                    <td class="heavy-left"><b name="s2Sum">44</b></td>
+                                    <td name="s201" class="active-cell s201">0</td>
+                                    <td name="s202" class="active-cell s202">8</td>
+                                    <td name="s203" class="active-cell s203">16</td>
+                                    <td name="s204" class="active-cell s204">3</td>
+                                    <td name="s205" class="active-cell s205">0</td>
+                                    <td name="s206" class="active-cell s206">1</td>
+                                    <td name="s207" class="active-cell s207">7</td>
+                                    <td name="s208" class="active-cell s208">1</td>
+                                    <td name="s209" class="active-cell s209">1</td>
+                                    <td name="s210" class="active-cell s210">2</td>
+                                    <td name="s211" class="active-cell s211">9</td>
+                                    <td name="s212" class="active-cell s212">4</td>
+                                    <td name="s213" class="active-cell s213">3</td>
+                                    <td name="s214" class="active-cell s214">2</td>
+                                    <td name="s215" class="active-cell s215">1</td>
+                                    <td name="s216" class="active-cell s216">6</td>
+                                    <td name="s217" class="active-cell s217">0</td>
+                                    <td name="s218" class="active-cell s218">0</td>
+                                    <td name="s219" class="active-cell s219">1</td>
+                                    <td name="s220" class="active-cell s220">0</td>
+                                    <td name="s221" class="active-cell s221">0</td>
+
+
+                                </tr>
+
+
+                                <tr>
+                                    <td class="heavy-left"><b>exicted</b></td>
+                                    <td class="heavy-left"><b name="s3Sum">15</b></td>
+                                    <td name="s301" class="active-cell s301">0</td>
+                                    <td name="s302" class="active-cell s302">5</td>
+                                    <td name="s303" class="active-cell s303">5</td>
+                                    <td name="s304" class="active-cell s304">0</td>
+                                    <td name="s305" class="active-cell s305">0</td>
+                                    <td name="s306" class="active-cell s306">2</td>
+                                    <td name="s307" class="active-cell s307">7</td>
+                                    <td name="s308" class="active-cell s308">1</td>
+                                    <td name="s309" class="active-cell s309">0</td>
+                                    <td name="s310" class="active-cell s310">0</td>
+                                    <td name="s311" class="active-cell s311">4</td>
+                                    <td name="s312" class="active-cell s312">1</td>
+                                    <td name="s313" class="active-cell s313">0</td>
+                                    <td name="s314" class="active-cell s314">0</td>
+                                    <td name="s315" class="active-cell s315">1</td>
+                                    <td name="s316" class="active-cell s316">0</td>
+                                    <td name="s317" class="active-cell s317">1</td>
+                                    <td name="s318" class="active-cell s318">1</td>
+                                    <td name="s319" class="active-cell s319">0</td>
+                                    <td name="s320" class="active-cell s320">0</td>
+                                    <td name="s321" class="active-cell s321">0</td>
+
+
+
+                                </tr>
+
+                                <tr>
+                                    <td class="heavy-left"><b>content</b></td>
+                                    <td class="heavy-left"><b name="s4Sum">28</b></td>
+                                    <td name="s401" class="active-cell s401">0</td>
+                                    <td name="s402" class="active-cell s402">15</td>
+                                    <td name="s403" class="active-cell s403">10</td>
+                                    <td name="s404" class="active-cell s404">5</td>
+                                    <td name="s405" class="active-cell s405">1</td>
+                                    <td name="s406" class="active-cell s406">2</td>
+                                    <td name="s407" class="active-cell s407">8</td>
+                                    <td name="s408" class="active-cell s408">4</td>
+                                    <td name="s409" class="active-cell s409">1</td>
+                                    <td name="s410" class="active-cell s410">1</td>
+                                    <td name="s411" class="active-cell s411">6</td>
+                                    <td name="s412" class="active-cell s412">2</td>
+                                    <td name="s413" class="active-cell s413">0</td>
+                                    <td name="s414" class="active-cell s414">1</td>
+                                    <td name="s415" class="active-cell s415">0</td>
+                                    <td name="s416" class="active-cell s416">2</td>
+                                    <td name="s417" class="active-cell s417">1</td>
+                                    <td name="s418" class="active-cell s418">0</td>
+                                    <td name="s419" class="active-cell s419">0</td>
+                                    <td name="s420" class="active-cell s420">0</td>
+                                    <td name="s421" class="active-cell s421">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="heavy-left"><b>awestruck</b></td>
+                                    <td class="heavy-left"><b name="s5Sum">18</b></td>
+                                    <td name="s501" class="active-cell s501">0</td>
+                                    <td name="s502" class="active-cell s502">4</td>
+                                    <td name="s503" class="active-cell s503">5</td>
+                                    <td name="s504" class="active-cell s504">1</td>
+                                    <td name="s505" class="active-cell s505">0</td>
+                                    <td name="s506" class="active-cell s506">7</td>
+                                    <td name="s507" class="active-cell s507">1</td>
+                                    <td name="s508" class="active-cell s508">0</td>
+                                    <td name="s509" class="active-cell s509">0</td>
+                                    <td name="s510" class="active-cell s510">0</td>
+                                    <td name="s511" class="active-cell s511">0</td>
+                                    <td name="s512" class="active-cell s512">0</td>
+                                    <td name="s513" class="active-cell s513">1</td>
+                                    <td name="s514" class="active-cell s514">0</td>
+                                    <td name="s515" class="active-cell s515">0</td>
+                                    <td name="s516" class="active-cell s516">2</td>
+                                    <td name="s517" class="active-cell s517">0</td>
+                                    <td name="s518" class="active-cell s518">0</td>
+                                    <td name="s519" class="active-cell s519">1</td>
+                                    <td name="s520" class="active-cell s520">0</td>
+                                    <td name="s521" class="active-cell s521">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="heavy-left"><b>hopeful</b></td>
+                                    <td class="heavy-left"><b name="s6Sum">12</b></td>
+                                    <td name="s601" class="active-cell s601">0</td>
+                                    <td name="s602" class="active-cell s602">3</td>
+                                    <td name="s603" class="active-cell s603">3</td>
+                                    <td name="s604" class="active-cell s604">1</td>
+                                    <td name="s605" class="active-cell s605">0</td>
+                                    <td name="s606" class="active-cell s606">1</td>
+                                    <td name="s607" class="active-cell s607">3</td>
+                                    <td name="s608" class="active-cell s608">2</td>
+                                    <td name="s609" class="active-cell s609">0</td>
+                                    <td name="s610" class="active-cell s610">0</td>
+                                    <td name="s611" class="active-cell s611">7</td>
+                                    <td name="s612" class="active-cell s612">0</td>
+                                    <td name="s613" class="active-cell s613">0</td>
+                                    <td name="s614" class="active-cell s614">0</td>
+                                    <td name="s615" class="active-cell s615">0</td>
+                                    <td name="s616" class="active-cell s616">1</td>
+                                    <td name="s617" class="active-cell s617">1</td>
+                                    <td name="s618" class="active-cell s618">1</td>
+                                    <td name="s619" class="active-cell s619">1</td>
+                                    <td name="s620" class="active-cell s620">0</td>
+                                    <td name="s621" class="active-cell s621">0</td>
+
+                                </tr>
+
+                                <tr>
+                                    <td class="heavy-left"><b>sad</b></td>
+                                    <td class="heavy-left"><b name="s7Sum">18</b></td>
+                                    <td name="s701" class="active-cell s701">0</td>
+                                    <td name="s702" class="active-cell s702">7</td>
+                                    <td name="s703" class="active-cell s703">2</td>
+                                    <td name="s704" class="active-cell s704">4</td>
+                                    <td name="s705" class="active-cell s705">2</td>
+                                    <td name="s706" class="active-cell s706">2</td>
+                                    <td name="s707" class="active-cell s707">1</td>
+                                    <td name="s708" class="active-cell s708">1</td>
+                                    <td name="s709" class="active-cell s709">2</td>
+                                    <td name="s710" class="active-cell s710">0</td>
+                                    <td name="s711" class="active-cell s711">6</td>
+                                    <td name="s712" class="active-cell s712">0</td>
+                                    <td name="s713" class="active-cell s713">2</td>
+                                    <td name="s714" class="active-cell s714">0</td>
+                                    <td name="s715" class="active-cell s715">0</td>
+                                    <td name="s716" class="active-cell s716">0</td>
+                                    <td name="s717" class="active-cell s717">0</td>
+                                    <td name="s718" class="active-cell s718">1</td>
+                                    <td name="s719" class="active-cell s719">1</td>
+                                    <td name="s720" class="active-cell s720">1</td>
+                                    <td name="s721" class="active-cell s721">0</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="heavy-left"><b>concerned</b></td>
+                                    <td class="heavy-left"><b name="s8Sum">43</b></td>
+                                    <td name="s801" class="active-cell s801">0</td>
+                                    <td name="s802" class="active-cell s802">16</td>
+                                    <td name="s803" class="active-cell s803">13</td>
+                                    <td name="s804" class="active-cell s804">5</td>
+                                    <td name="s805" class="active-cell s805">0</td>
+                                    <td name="s806" class="active-cell s806">2</td>
+                                    <td name="s807" class="active-cell s807">11</td>
+                                    <td name="s808" class="active-cell s808">4</td>
+                                    <td name="s809" class="active-cell s809">3</td>
+                                    <td name="s810" class="active-cell s810">1</td>
+                                    <td name="s811" class="active-cell s811">14</td>
+                                    <td name="s812" class="active-cell s812">2</td>
+                                    <td name="s813" class="active-cell s813">5</td>
+                                    <td name="s814" class="active-cell s814">3</td>
+                                    <td name="s815" class="active-cell s815">1</td>
+                                    <td name="s816" class="active-cell s816">11</td>
+                                    <td name="s817" class="active-cell s817">8</td>
+                                    <td name="s818" class="active-cell s818">1</td>
+                                    <td name="s819" class="active-cell s819">3</td>
+                                    <td name="s820" class="active-cell s820">2</td>
+                                    <td name="s821" class="active-cell s821">4</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="heavy-left"><b>shocked</b></td>
+                                    <td class="heavy-left"><b name="s9Sum">10</b></td>
+                                    <td name="s901" class="active-cell s901">0</td>
+                                    <td name="s902" class="active-cell s902">4</td>
+                                    <td name="s903" class="active-cell s903">3</td>
+                                    <td name="s904" class="active-cell s904">1</td>
+                                    <td name="s905" class="active-cell s905">0</td>
+                                    <td name="s906" class="active-cell s906">2</td>
+                                    <td name="s907" class="active-cell s907">1</td>
+                                    <td name="s908" class="active-cell s908">2</td>
+                                    <td name="s909" class="active-cell s909">1</td>
+                                    <td name="s910" class="active-cell s910">1</td>
+                                    <td name="s911" class="active-cell s911">5</td>
+                                    <td name="s912" class="active-cell s912">2</td>
+                                    <td name="s913" class="active-cell s913">2</td>
+                                    <td name="s914" class="active-cell s914">0</td>
+                                    <td name="s915" class="active-cell s915">0</td>
+                                    <td name="s916" class="active-cell s916">3</td>
+                                    <td name="s917" class="active-cell s917">2</td>
+                                    <td name="s918" class="active-cell s918">0</td>
+                                    <td name="s919" class="active-cell s919">0</td>
+                                    <td name="s920" class="active-cell s920">0</td>
+                                    <td name="s921" class="active-cell s921">0</td>
+                                </tr>
+
+
+
+
+
+
+
+                                <tbody>
+                    </table>
+
+                    <!-- <p style="text-align: center;font-size: 10px;">Copyright©2020 Intelligent Big Data Visualization Lab, Tongji University ,Shanghai, China</p> -->
+
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- detail infoG -->
+
+            <div class="container-fluid" id="cue-overlay-container">
+
+                <!-- 弹出页构建 -->
+                <button class='glyphicon-close'>
 				<!-- <img src="src/close.png"  height="10" width="10" style="margin-right: 5px;"/> -->
 			</button>
 
+
+                <div class="container-img" id="water-fall-container">
+                    <!--<div class="imgShow"><a href="images/temp_img02.jpg"><img src="images/temp_img02.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img03.jpg"><img src="images/temp_img03.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img04.jpg"><img src="images/temp_img04.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img05.jpg"><img src="images/temp_img05.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img06.jpg"><img src="images/temp_img06.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img07.jpg"><img src="images/temp_img07.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img08.jpg"><img src="images/temp_img08.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img09.jpg"><img src="images/temp_img09.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img10.jpg"><img src="images/temp_img10.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img11.jpg"><img src="images/temp_img11.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img12.jpg"><img src="images/temp_img12.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img13.jpg"><img src="images/temp_img13.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img14.jpg"><img src="images/temp_img14.jpg" width="380px"/></a></div>
+	<div class="imgShow"><a href="images/temp_img15.jpg"><img src="images/temp_img15.jpg" width="380px"/></a></div>
+	 -->
+                </div>
+            </div>
 
             <div class="container-img" id="water-fall-container">
                 <!--<div class="imgShow"><a href="images/temp_img02.jpg"><img src="images/temp_img02.jpg" width="380px"/></a></div>
@@ -473,7 +902,7 @@
 
 
 
-
+    </div>
 
 
 
@@ -499,7 +928,6 @@
         //默认选中
         document.getElementById("one1").click();
     </script>
-
 
 
 
@@ -897,17 +1325,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         //前进后退关闭按钮
         d3.select(".chevron-right")
             .on("mouseup", function() {
@@ -939,6 +1356,11 @@
 
     <script type="text/javascript">
     </script>
+
+
+
+
+
 
     <script>
         //===============================功能：切换主题色
@@ -1006,8 +1428,6 @@
         }
     </script>
 
-
-
     <script type="text/javascript">
         //echarts
         // 基于准备好的dom，初始化echarts实例
@@ -1051,10 +1471,7 @@
             grid: {
                 top: 150
             },
-            xAxis: {
-                min: -1.2,
-                max: 2
-            },
+            xAxis: {},
             yAxis: {},
             legend: {
                 top: 100,
@@ -1348,8 +1765,8 @@
                 nameTextStyle: {
                     color: 'transparent',
                 },
-                min: -1.2,
-                max: 2,
+                // min: -1,
+                // max: 1.2
                 axisTick: {
                     show: false
                 }
@@ -1559,4 +1976,4 @@
 
 </body>
 
-</html>
+</html5
