@@ -1051,24 +1051,24 @@
         //数据格式，需替换
 
         var scatter2_cat = [
-            [-0.5996829041813307, -0.1635919177502726, 'happy'],
-            [-0.048884322351258, -0.13182735623576852, 'surprised'],
-            [-0.5632351185515618, -0.14500599393544547, 'excited'],
-            [-0.4688717107828682, -0.11517010685349165, 'content'],
-            [-0.2115163330964271, -0.06644448508129913, 'awestruck'],
-            [-0.34599454264744345, -0.2983127385825039, 'hopeful'],
-            [1.1114965503483922, -0.4504151424126964, 'sad'],
-            [-0.0057389953950101255, 0.7487136007546221, 'bored'],
-            [0.8625378501497745, -0.3651491706254316, 'concerned'],
-            [0.24513487943785175, 0.5820856751874635, 'overwhelmed'],
-            [0.5940886632746911, -0.2657488547966196, 'shocked'],
-            [0.37841336414752696, 0.5495382254876126, 'annoyed']
+            [-0.561839918600647, -0.15982532726680926, 'happy'],
+            [-0.05388016649822122, -0.1362019750949668, 'surprised'],
+            [-0.5157649924655613, -0.1403157702225861, 'excited'],
+            [-0.0709841947632231, 0.7442267193916143, 'bored'],
+            [-0.42826180149939663, -0.13292391484701654, 'content'],
+            [-0.19917189515785128, -0.08187534674761238, 'awestruck'],
+            [-0.309195753498724, -0.3089923781079181, 'hopeful'],
+            [0.20175968882973627, 0.5002079164361872, 'overwhelmed'],
+            [0.8083092616867151, -0.2945072091240332, 'concerned'],
+            [0.31536680725186184, 0.5347026474980225, 'annoyed'],
+            [1.050187488869578, -0.3862223224701069, 'sad'],
+            [0.5258519684976648, -0.21039333321619336, 'shocked']
         ];
 
         var schema = [{
             name: 'id',
             index: 0,
-            text: 'Pic id'
+            text: 'EmoVis id'
         }, {
             name: 'emotion',
             index: 1,
@@ -1077,6 +1077,54 @@
             name: 'score',
             index: 2,
             text: 'Mean score'
+        }, {
+            name: 'happy',
+            index: 3,
+            text: 'happy'
+        }, {
+            name: 'surprised',
+            index: 4,
+            text: 'surprised'
+        }, {
+            name: 'excited',
+            index: 5,
+            text: 'excited'
+        }, {
+            name: 'content',
+            index: 6,
+            text: 'content'
+        }, {
+            name: 'awestruck',
+            index: 7,
+            text: 'awestruck'
+        }, {
+            name: 'hopeful',
+            index: 8,
+            text: 'hopeful'
+        }, {
+            name: 'sad',
+            index: 9,
+            text: 'sad'
+        }, {
+            name: 'bored',
+            index: 10,
+            text: 'bored'
+        }, {
+            name: 'concerned',
+            index: 11,
+            text: 'concerned'
+        }, {
+            name: 'overwhelmed',
+            index: 12,
+            text: 'overwhelmed'
+        }, {
+            name: 'shocked',
+            index: 13,
+            text: 'shocked'
+        }, {
+            name: 'annoyed',
+            index: 14,
+            text: 'annoyed'
         }, ];
 
         //--------------------
@@ -1086,7 +1134,10 @@
             grid: {
                 top: 150
             },
-            xAxis: {},
+            xAxis: {
+                // min: -1.2,
+                // max: 1.7,
+            },
             yAxis: {},
             legend: {
                 top: 100,
@@ -1104,12 +1155,24 @@
                 formatter: function(obj) {
                     var value = obj.value;
                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
-                        'Pic id: ' + value[2] +
+                        'EmoVis Id: ' + value[2] +
                         '</div>' +
                         // '<img src= "./src/5.jpg"></img>' + '<br>' +
-                        '<img src= "./src/' + value[5] + '" style = "height:100px">' + '</img>' + '<br>' +
+                        '<img src= "src/' + value[2] + '.png' + '" style = "height:100px">' + '</img>' + '<br>' +
                         schema[1].text + '：' + value[4] + '<br>' +
-                        schema[2].text + '：' + value[3] + '<br>'
+                        schema[2].text + '：' + value[3] + '<br>' +
+                        schema[3].text + '：' + value[5] + '<br>' +
+                        schema[4].text + '：' + value[6] + '<br>' +
+                        schema[5].text + '：' + value[7] + '<br>' +
+                        schema[6].text + '：' + value[8] + '<br>' +
+                        schema[7].text + '：' + value[9] + '<br>' +
+                        schema[8].text + '：' + value[10] + '<br>' +
+                        schema[9].text + '：' + value[11] + '<br>' +
+                        schema[10].text + '：' + value[12] + '<br>' +
+                        schema[11].text + '：' + value[13] + '<br>' +
+                        schema[12].text + '：' + value[14] + '<br>' +
+                        schema[13].text + '：' + value[15] + '<br>' +
+                        schema[14].text + '：' + value[16] + '<br>'
                 }
             },
             series: [
@@ -1296,20 +1359,20 @@
         var scatter3d = echarts.init(document.getElementById('scatter3D'));
 
         var scatter3_cat = [
-            [-0.5996829041813307, -0.1572676696030792, -0.1635919177502726, 'happy'],
-            [-0.048884322351258, 0.10730146070149993, -0.13182735623576852, 'surprised'],
-            [-0.5632351185515618, 0.09035956252445268, -0.14500599393544547, 'excited'],
-            [-0.4688717107828682, -0.20704400027948364, -0.11517010685349165, 'content'],
-            [-0.2115163330964271, 0.4934296810783273, -0.06644448508129913, 'awestruck'],
-            [-0.34599454264744345, -0.095832541335203, -0.2983127385825039, 'hopeful'],
-            [1.1114965503483922, -0.31190301488710137, -0.4504151424126964, 'sad'],
-            [-0.0057389953950101255, -0.4839162002946629, 0.7487136007546221, 'bored'],
-            [0.8625378501497745, -0.12713090748071068, -0.3651491706254316, 'concerned'],
-            [0.24513487943785175, 0.4009808471922368, 0.5820856751874635, 'overwhelmed'],
-            [0.5940886632746911, 0.2211195363078572, -0.2657488547966196, 'shocked'],
-            [0.37841336414752696, -0.07540914355159774, 0.5495382254876126, 'annoyed']
+            [-0.561839918600647, -0.15166238490430706, -0.15982532726680926, 'happy'],
+            [-0.05388016649822122, 0.11592161926085627, -0.1362019750949668, 'surprised'],
+            [-0.5157649924655613, 0.07655889281957899, -0.1403157702225861, 'excited'],
+            [-0.0709841947632231, -0.4357065524199138, 0.7442267193916143, 'bored'],
+            [-0.42826180149939663, -0.18394701023009552, -0.13292391484701654, 'content'],
+            [-0.19917189515785128, 0.4237295822152706, -0.08187534674761238, 'awestruck'],
+            [-0.309195753498724, -0.14988314506832318, -0.3089923781079181, 'hopeful'],
+            [0.20175968882973627, 0.3974764874257342, 0.5002079164361872, 'overwhelmed'],
+            [0.8083092616867151, -0.11141918108535992, -0.2945072091240332, 'concerned'],
+            [0.31536680725186184, -0.06310778634720574, 0.5347026474980225, 'annoyed'],
+            [1.050187488869578, -0.3155506654059008, -0.3862223224701069, 'sad'],
+            [0.5258519684976648, 0.1806292022418237, -0.21039333321619336, 'shocked']
         ];
-        //数据格式，需替换
+
 
 
         var option3D = {
@@ -1380,8 +1443,8 @@
                 nameTextStyle: {
                     color: 'transparent',
                 },
-                // min: -1,
-                // max: 1.2
+                // min: -1.2,
+                // max: 1.7,
                 axisTick: {
                     show: false
                 }
@@ -1416,10 +1479,10 @@
                 formatter: function(obj) {
                     var value = obj.value;
                     return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">' +
-                        'Pic id: ' + value[3] +
+                        'EmoVis id: ' + value[3] +
                         '</div>' +
                         // '<img src= "./src/5.jpg"></img>' + '<br>' +
-                        '<img src= "./src/' + value[6] + '" style = "height:100px">' + '</img>' + '<br>' +
+                        '<img src= "src/' + value[3] + '.png' + '" style = "height:100px">' + '</img>' + '<br>' +
                         schema[1].text + '：' + value[5] + '<br>' +
                         schema[2].text + '：' + value[4] + '<br>'
                 }
