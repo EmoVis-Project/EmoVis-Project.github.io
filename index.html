@@ -10,7 +10,7 @@
     <script type="text/javascript" src="libs/echarts.min.js"></script>
     <script type="text/javascript" src="libs/echarts-gl.min.js"></script>
     <script type="text/javascript" src="libs/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="data/content.js"></script>
+    <script type="text/javascript" src="data/content2.js"></script>
     <script type="text/javascript" src="data/scatter2.js"></script>
 
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
@@ -31,7 +31,7 @@
 
 
     <div id="maskColor" style="background: linear-gradient(to right, #007FE4 0%,#00C1FF 100%);">
-        <img src="src/smile.png" width="45px" style="margin-top: 15px;margin-left: 45px;position:absolute" />
+        <img src="icon/smile.png" width="45px" style="margin-top: 15px;margin-left: 45px;position:absolute" />
         <h1 class="major">What Triggers Emotional Responses in Infographics?</h1>
         <button class="tab_button_d" onclick="setTab('one',1,2)" id="one1">Design space</button>
         <button class="tab_button_s" onclick="setTab('one',2,2)" id="one2">Dataset</button>
@@ -56,7 +56,7 @@
         <div id="scatter2D"></div>
         <div id="scatter3D"></div>
         <a class="DownButtonNormal" style="margin-top: 50px;margin-bottom: 50px;font-size:26px; font-weight:600; color: black;" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
-            😄 Download dataset <img src="src/download.png" height="20px" width="20px" /> 
+            😄 Download dataset <img src="icon/download.png" height="20px" width="20px" /> 
         </a>
 
     </div>
@@ -64,8 +64,8 @@
     <div id="con_one_1" style="display: block; clear: both; text-align:center;">
         <p class="sub" style="margin-top: 100px;font-size:26px">Let's Create Affective Infographics</p>
         <span style="font-size: 16px; font-weight: 400; color:#aaa ">
-            *Try click the button to change color theme 👉
-            <button class="button_c" onclick="changeColor()"><img src="src/color.png" width="25px" style="margin-left: -5px; margin-bottom: 5px;"></button>
+            *Try click the button and change the theme to <u>happy</u> 👉
+            <button class="button_c" onclick="changeColor()"><img src="icon/color.png" width="25px" style="margin-left: -5px; margin-bottom: 5px;"></button>
         </span>
         <img src="virus.png" style="margin-left:2%; height: 45px; width: 75%; opacity:1;"></img>
 
@@ -828,8 +828,8 @@
                 src = "https://infographics-test.s3-us-west-1.amazonaws.com/" + data.link.slice(4)
             }
             source.html("<a href='" + src + "'>" + src + "</a>");
-            topic.html(data.topic);
-            description.html(data.des);
+            // topic.html(data.topic);
+            // description.html(data.des);
 
             var skillList1 = [];
             var skillList2 = [];
@@ -911,8 +911,8 @@
 
 
                 var img = document.createElement('img');
-                //img.src = table[i].link; //本地资源
-                img.src = "https://infographics-test.s3-us-west-1.amazonaws.com/" + table[i].link.slice(4);
+                img.src = table[i].link; //本地资源
+                // img.src = "https://infographics-test.s3-us-west-1.amazonaws.com/" + table[i].link.slice(4);
                 img.width = 380;
 
                 // img.onload =function(){
