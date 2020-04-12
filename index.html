@@ -11,6 +11,7 @@
     <script type="text/javascript" src="libs/echarts-gl.min.js"></script>
     <script type="text/javascript" src="libs/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="data/content2.js"></script>
+    <script type="text/javascript" src="data/tags.js"></script>
     <script type="text/javascript" src="data/scatter2.js"></script>
 
     <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
@@ -64,7 +65,7 @@
     <div id="con_one_1" style="display: block; clear: both; text-align:center;">
         <p class="sub" style="margin-top: 100px;font-size:26px">Let's Create Affective Infographics</p>
         <span style="font-size: 16px; font-weight: 400; color:#aaa ">
-            *Try click the button and change the theme to <u>happy</u> 👉
+            *Try click the button and change the theme to <u id="colorset_Name">happy</u> 👉
             <button class="button_c" onclick="changeColor()"><img src="icon/color.png" width="25px" style="margin-left: -5px; margin-bottom: 5px;"></button>
         </span>
         <img src="virus.png" style="margin-left:2%; height: 45px; width: 75%; opacity:1;"></img>
@@ -647,7 +648,7 @@
 
 
 
-            console.log(boxes, boxes[0].offsetHeight)
+            //console.log(boxes, boxes[0].offsetHeight)
             for (var i = 0, l = boxes.length; i < l; i++) {
 
 
@@ -783,7 +784,7 @@
 
                 idp = 0;
                 idl = table.length; //length 查询到的所有图片的length
-                console.log(table)
+                // console.log(table)
 
                 if (idl != 0) {
                     //addContent(table); //将查询到的内容增加到fluid页面中 1.0
@@ -896,8 +897,6 @@
 
 
         function addWaterfall(table, Fall) {
-
-
             //清空
             Fall.innerHTML = "";
 
@@ -911,19 +910,44 @@
 
 
                 var img = document.createElement('img');
-                img.src = table[i].link; //本地资源
-                // img.src = "https://infographics-test.s3-us-west-1.amazonaws.com/" + table[i].link.slice(4);
+
+                // img.src = table[i].link; //本地资源
+
+                //测试单张图片
+                img.src = "src/pic1.png";
+
                 img.width = 380;
-
-                // img.onload =function(){
-                // // 打印
-                // //alert('width:' + img.width + ',height:' + img.height)
-                // console.log(div_img.offsetWidth,div_img.offsetHeight )
-                // }
-
                 Fall.appendChild(div_img);
                 div_img.appendChild(a_img);
                 a_img.appendChild(img);
+
+
+                //添加图片上的标记
+                //console.log(table[i].index,skill)
+                var currentTag = [];
+                for (var t = 0; t < tags.length; t++) {
+                    if (tags[t].index == table[i].index) {
+                        var tagName = "tag" + skill.slice(2, 4);
+                        //console.log(tagName,tags[t][tagName])
+                        currentTag = tags[t][tagName];
+                    }
+
+                }
+
+                var a_tag = document.createElement('a');
+                a_tag.className = "taglabels";
+                a_tag.href = "#";
+                a_tag.style.left = currentTag[0];
+                a_tag.style.top = currentTag[1];
+                a_tag.innerHTML = currentTag[2];
+
+                var a_span = document.createElement('span');
+                a_span.className = "taglabels_span";
+
+                div_img.appendChild(a_tag);
+                a_tag.appendChild(a_span);
+
+
             }
 
 
