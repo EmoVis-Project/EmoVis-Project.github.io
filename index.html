@@ -1173,8 +1173,8 @@
             legend: {
                 top: 100,
                 data: ['happy', 'surprised', 'excited', 'content',
-                    'awestruck', 'hopeful', 'sad', 'bored', 'concerned',
-                    'overwhelmed', 'shocked', 'annoyed'
+                    'awestruck', 'hopeful', 'sad', 'concerned', 'shocked',
+                    'overwhelmed', 'bored', 'annoyed'
                 ]
             },
             animation: true,
@@ -1286,17 +1286,6 @@
                         color: '#76B7B6',
                     }
                 }, {
-                    name: "bored",
-                    symbolSize: 3,
-                    data: data[7],
-                    type: 'scatter',
-                    symbolSize: function(data) {
-                        return Math.sqrt(data[3]) * 3.5;
-                    },
-                    itemStyle: {
-                        color: '#A8723D',
-                    }
-                }, {
                     name: "concerned",
                     symbolSize: 3,
                     data: data[8],
@@ -1306,6 +1295,17 @@
                     },
                     itemStyle: {
                         color: '#4E79A8',
+                    }
+                }, {
+                    name: "shocked",
+                    symbolSize: 3,
+                    data: data[10],
+                    type: 'scatter',
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[3]) * 3.5;
+                    },
+                    itemStyle: {
+                        color: '#5D2B9E',
                     }
                 }, {
                     name: "overwhelmed",
@@ -1319,15 +1319,15 @@
                         color: 'grey',
                     }
                 }, {
-                    name: "shocked",
+                    name: "bored",
                     symbolSize: 3,
-                    data: data[10],
+                    data: data[7],
                     type: 'scatter',
                     symbolSize: function(data) {
                         return Math.sqrt(data[3]) * 3.5;
                     },
                     itemStyle: {
-                        color: '#5D2B9E',
+                        color: '#A8723D',
                     }
                 }, {
                     name: "annoyed",
@@ -1427,8 +1427,8 @@
             legend: {
                 top: 100,
                 data: ['happy', 'surprised', 'excited', 'content',
-                    'awestruck', 'hopeful', 'sad', 'bored', 'concerned',
-                    'overwhelmed', 'shocked', 'annoyed'
+                    'awestruck', 'hopeful', 'sad', 'concerned', 'shocked',
+                    'overwhelmed', 'bored', 'annoyed'
                 ]
             },
             grid3D: {
@@ -1599,17 +1599,6 @@
                     color: "#76B7B6"
                 }
             }, {
-                name: "bored",
-                symbolSize: 3,
-                data: data2[7],
-                type: 'scatter3D',
-                symbolSize: function(data2) {
-                    return Math.sqrt(data2[4]) * 3.5;
-                },
-                itemStyle: {
-                    color: "#A8723D"
-                }
-            }, {
                 name: "concerned",
                 symbolSize: 3,
                 data: data2[8],
@@ -1619,6 +1608,17 @@
                 },
                 itemStyle: {
                     color: "#4E79A8"
+                }
+            }, {
+                name: "shocked",
+                symbolSize: 3,
+                data: data2[10],
+                type: 'scatter3D',
+                symbolSize: function(data2) {
+                    return Math.sqrt(data2[4]) * 3.5;
+                },
+                itemStyle: {
+                    color: "#5D2B9E"
                 }
             }, {
                 name: "overwhelmed",
@@ -1632,15 +1632,15 @@
                     color: "grey"
                 }
             }, {
-                name: "shocked",
+                name: "bored",
                 symbolSize: 3,
-                data: data2[10],
+                data: data2[7],
                 type: 'scatter3D',
                 symbolSize: function(data2) {
                     return Math.sqrt(data2[4]) * 3.5;
                 },
                 itemStyle: {
-                    color: "#5D2B9E"
+                    color: "#A8723D"
                 }
             }, {
                 name: "annoyed",
