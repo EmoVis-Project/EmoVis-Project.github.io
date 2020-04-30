@@ -55,9 +55,9 @@
 
     <div style="display: none;" id="con_one_2">
         <div id="scatter2D"></div>
-        <div id="scatter3D"></div>
+        <div id="scatter3D" style="margin-top:50px"></div>
         <a class="DownButtonNormal" style="margin-left:40%;margin-top: 50px;margin-bottom: 50px;font-size:26px; font-weight:600; color: black;" name="DownLoadHistEvent" download="EmotionInfoG.csv" href="http://beijingair.sinaapp.com/data/beijing/all/20131205/csv">
-            😄 Download dataset <img src="icon/download.png" height="20px" width="20px" /> 
+            😄 Download EmoVis <img src="icon/download.png" height="20px" width="20px" /> 
         </a>
 
     </div>
@@ -839,6 +839,7 @@
             gif.attr("src", data.link)
                 .attr("loop", "infinite");
             var src = data.link; //识别本地图片和网络图片
+            debugger;
             // if (data.link.indexOf("src/") != -1) {
             //     src = "https://infographics-test.s3-us-west-1.amazonaws.com/" + data.link.slice(4)
             // }
@@ -948,18 +949,24 @@
 
                 }
 
-                var a_tag = document.createElement('a');
+                var a_tag = document.createElement('span');
                 a_tag.className = "taglabels";
                 a_tag.href = "#";
                 a_tag.style.left = currentTag[0];
                 a_tag.style.top = currentTag[1];
                 a_tag.innerHTML = currentTag[2];
+                // debugger;
+                if (typeof(currentTag[2]) == "undefined") {
+                    a_tag.style.display = "none";
+                } else {
+                    a_tag.style.width = currentTag[2].length * 5 + 90;
+                }
 
-                var a_span = document.createElement('span');
-                a_span.className = "taglabels_span";
+                // var a_span = document.createElement('span');
+                // a_span.className = "taglabels_span";
 
                 div_img.appendChild(a_tag);
-                a_tag.appendChild(a_span);
+                // a_tag.appendChild(a_span);
 
 
             }
@@ -1017,16 +1024,16 @@
         //title色*2，按钮高亮色，边框色和填充色
         var colorset = [
             ["happy", 'rgba(242, 179, 158,', "#F2B39E", "happy-1.png"],
-            ["surprised", 'rgba(42, 148, 194,', "#2A94C2", "virus.png"],
+            ["surprised", 'rgba(42, 148, 194,', "#2A94C2", "surprised-1.png"], //wait
             ["excited", 'rgba(230, 54, 46,', "#E6362E", "excited-1.png"],
             ["content", 'rgba(98, 195, 218,', "#62C3DA", "content-1.png"],
-            ["awestruck", 'rgba(49, 53, 58,', "#31353A", "virus.png"],
+            ["awestruck", 'rgba(49, 53, 58,', "#31353A", "virus.png"], //?
             ["hopeful", 'rgba(154, 204, 109,', "#9ACC6D", "hopeful-1.png"],
             ["sad", 'rgba(40, 52, 74,', "#28344A", "sad-1.png"],
-            ["concerned", 'rgba(66, 62, 60,', "#423E3C", "virus.png"],
-            ["shocked", 'rgba(153, 17, 16,', "#991110", "virus.png"],
+            ["concerned", 'rgba(66, 62, 60,', "#423E3C", "virus.png"], //
+            ["shocked", 'rgba(153, 17, 16,', "#991110", "virus.png"], //wait
             ["happy", 'rgba(168, 212, 232,', "#A8D4E8", "happy-2.png"],
-            ["surprised", 'rgba(222, 173, 34,', "#DDAD23", "virus.png"],
+            ["surprised", 'rgba(222, 173, 34,', "#DDAD23", "surprised-2.png"], //wait
             ["excited", 'rgba(235, 92, 54,', "#EB5C36", "excited-2.png"],
             ["content", 'rgba(222, 194, 152,', "#DEC298", "content-2.png"],
             ["awestruck", 'rgba(47, 78, 103,', "#2F4E67", "awestruck-2.png"],
@@ -1175,8 +1182,8 @@
                 top: 150
             },
             xAxis: {
-                // min: -1.2,
-                // max: 1.7,
+                min: -1.2,
+                max: 1.7,
             },
             yAxis: {},
             legend: {
@@ -1380,7 +1387,7 @@
                     fontSize: 26,
                     fontFamily: ''
                 },
-                subtext: '*shape denotes xxx; size denotes xxx; hover to view snapshot',
+                subtext: '*color encodes the representative emotion; size encodes the mean awereness score of the representative emotion.',
                 subtextStyle: {
                     fontSize: 16,
                     lineHeight: 40,
@@ -1420,12 +1427,12 @@
 
         var option3D = {
             title: {
-                text: 'Explorable CA Space For Affective Infographics',
+                text: 'Explorable CA Space (3D) For Affective Infographics',
                 textStyle: {
                     fontSize: 26,
                     fontFamily: ''
                 },
-                subtext: '*shape denotes xxx; size denotes xxx; hover to view snapshot',
+                subtext: '*color encodes the representative emotion; size encodes the mean awereness score of the representative emotion.',
                 subtextStyle: {
                     fontSize: 16,
                     lineHeight: 40,
@@ -1486,8 +1493,8 @@
                 nameTextStyle: {
                     color: 'transparent',
                 },
-                // min: -1.2,
-                // max: 1.7,
+                min: -1.2,
+                max: 1.7,
                 axisTick: {
                     show: false
                 }
